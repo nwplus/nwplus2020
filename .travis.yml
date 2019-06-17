@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+notifications:
+  email: false
+install:
+  - yarn install
+script:
+  - yarn lint
+  - yarn test
+  - yarn run build
+  - yarn run generate
