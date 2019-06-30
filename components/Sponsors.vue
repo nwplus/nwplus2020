@@ -1,19 +1,21 @@
 <template>
   <div>
     <h1>Sponsors</h1>
-    <div
-      v-for="item in items"
-      :key="item.name"
-    >
-      <a
-        :href="item.url"
+    <div :class="'sponsors'">
+      <div
+        v-for="item in items"
+        :key="item.name"
       >
-        <img
-          :src="item.imageURL"
-          :alt="item.name"
+        <a
+          :href="item.url"
         >
-      </a>
-</div>
+          <img
+            :src="item.imageURL"
+            :alt="item.name"
+          >
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,4 +30,12 @@ export default {
 </script>
 
 <style>
+  .sponsors {
+    display: flex;
+  }
+  img {
+    height: 60%;
+    max-width: 60%;
+    padding: 5px;
+  }
 </style>

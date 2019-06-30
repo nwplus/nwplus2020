@@ -40,7 +40,6 @@ export default {
     const listOfSponsors = await fireDb.getSponsors()
     // Populate sponsors with their image urls
     const populatedSponsors = await Promise.all(listOfSponsors.map(sponsor => getSponsorImage(sponsor)))
-    console.log(populatedSponsors[0])
     return { info: data.WelcomeText, items: listOfFaq, Sponsors: populatedSponsors }
   }
 }
