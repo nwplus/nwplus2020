@@ -2,26 +2,11 @@
   <section class="container">
     <div>
       <logo />
-      <welcome :info="info">
-        <h1 class="title">
-          LHD2020
-        </h1>
-        <h2 class="subtitle">
-          The LHD website
-        </h2>
-        <div class="links">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            class="button--green"
-          >Documentation</a>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            class="button--grey"
-          >GitHub</a>
-        </div>
-      </welcome>
+      <welcome :info="info" />
+      <h1 class="title">
+        nwPlus 2020
+      </h1>
+      <WhyJoin />
       <faq :items="items" />
     </div>
   </section>
@@ -31,12 +16,14 @@
 import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
+import WhyJoin from '~/components/WhyJoin.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
   components: {
     Logo,
     Welcome,
-    Faq
+    Faq,
+    WhyJoin
   },
   asyncData: async () => {
     const data = await fireDb.get()
