@@ -1,42 +1,47 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <welcome :info="info">
-        <h1 class="title">
-          LHD2020
-        </h1>
-        <h2 class="subtitle">
-          The LHD website
-        </h2>
-        <div class="links">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            class="button--green"
-          >Documentation</a>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            class="button--grey"
-          >GitHub</a>
-        </div>
-      </welcome>
-      <faq :items="items" />
-    </div>
-  </section>
+  <div>
+    <section class="container">
+      <div>
+        <logo />
+        <welcome :info="info">
+          <h1 class="title">
+            LHD2020
+          </h1>
+          <h2 class="subtitle">
+            The LHD website
+          </h2>
+          <div class="links">
+            <a
+              href="https://nuxtjs.org/"
+              target="_blank"
+              class="button--green"
+            >Documentation</a>
+            <a
+              href="https://github.com/nuxt/nuxt.js"
+              target="_blank"
+              class="button--grey"
+            >GitHub</a>
+          </div>
+        </welcome>
+        <faq :items="items" />
+      </div>
+    </section>
+    <Footer />
+  </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
+import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
   components: {
     Logo,
     Welcome,
-    Faq
+    Faq,
+    Footer
   },
   asyncData: async () => {
     const data = await fireDb.get()
@@ -49,7 +54,7 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
