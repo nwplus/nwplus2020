@@ -10,6 +10,7 @@
       <faq :items="items" />
     </div>
   </section>
+    <Footer />
 </template>
 
 <script>
@@ -17,6 +18,7 @@ import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
+import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
   components: {
@@ -24,6 +26,7 @@ export default {
     Welcome,
     Faq,
     WhyJoin
+    Footer
   },
   asyncData: async () => {
     const data = await fireDb.get()
@@ -36,7 +39,7 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
