@@ -2,27 +2,15 @@
   <section class="container">
     <div>
       <logo />
-      <welcome :info="info">
-        <h1 class="title">
-          LHD2020
-        </h1>
-        <h2 class="subtitle">
-          The LHD website
-        </h2>
-        <div class="links">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            class="button--green"
-          >Documentation</a>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            class="button--grey"
-          >GitHub</a>
-        </div>
-      </welcome>
+      <welcome :info="info" />
+      <h1 class="title">
+        NwPlus2020
+      </h1>
+      <h2 class="subtitle">
+        The NwPlus website
+      </h2>
       <faq :items="items" />
+      <Sponsors :items="Sponsors" />
     </div>
   </section>
 </template>
@@ -31,17 +19,29 @@
 import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
+import Sponsors from '~/components/Sponsors.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
   components: {
     Logo,
     Welcome,
-    Faq
+    Faq,
+    Sponsors
   },
   asyncData: async () => {
+    // functions
+    const getSponsorImage = async (sponsor) => {
+      sponsor.imageURL = await fireDb.getImageUrl(sponsor.image)
+      return sponsor
+    }
+    // data
     const data = await fireDb.get()
     const listOfFaq = await fireDb.getFAQ()
-    return { info: data.WelcomeText, items: listOfFaq }
+    const listOfSponsors = await fireDb.getSponsors()
+    // Populate sponsors with their image urls
+    const populatedSponsors = await Promise.all(listOfSponsors.map(sponsor => getSponsorImage(sponsor)))
+    console.log(populatedSponsors[0])
+    return { info: data.WelcomeText, items: listOfFaq, Sponsors: populatedSponsors }
   }
 }
 </script>
