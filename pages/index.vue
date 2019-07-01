@@ -23,18 +23,11 @@
             >GitHub</a>
           </div>
         </welcome>
-<<<<<<< HEAD
         <faq :items="items" />
-=======
->>>>>>> 6f72b682bd44dd87f2d716c095b91ab5b0f2b047
         <Outro :text="outro" />
       </div>
     </section>
     <Footer :text="footer" />
-<<<<<<< HEAD
-=======
-    <faq :items="items" />
->>>>>>> 6f72b682bd44dd87f2d716c095b91ab5b0f2b047
   </div>
 </template>
 
