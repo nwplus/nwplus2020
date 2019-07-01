@@ -32,10 +32,11 @@ export default {
 <style>
   .sponsors {
     display: flex;
+    justify-content: space-around;
   }
   img {
-    height: 60%;
-    max-width: 60%;
+    height: auto;
+    max-width: 200px;
     padding: 5px;
   }
 </style>
