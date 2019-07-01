@@ -11,6 +11,7 @@
     </div>
   </section>
     <Footer />
+        <Outro :text="outro" />
 </template>
 
 <script>
@@ -18,6 +19,7 @@ import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
+import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
@@ -25,13 +27,18 @@ export default {
     Logo,
     Welcome,
     Faq,
+    Outro,
     WhyJoin
     Footer
   },
   asyncData: async () => {
     const data = await fireDb.get()
     const listOfFaq = await fireDb.getFAQ()
-    return { info: data.WelcomeText, items: listOfFaq }
+    return { info: data.WelcomeText,
+      items: listOfFaq,
+      outro: data.OutroText,
+      footer: data.FooterText
+    }
   }
 }
 </script>
