@@ -14,7 +14,6 @@ if (!firebase.apps.length) {
 }
 const db = firebase.firestore()
 const storage = firebase.storage()
-console.log(storage)
 const webCollection = 'Website_content'
 const WebDocument = process.env.WEBSITE_NAME
 const Faq = 'Faq'
@@ -41,7 +40,7 @@ const fireDb = {
     return (await ref.get()).docs.map(doc => doc.data())
   },
   getImageUrl: async (imageref) => {
-    const image = storage.ref(`NwPlus/${imageref}`)
+    const image = storage.ref(`${WebDocument}/${imageref}`)
     const url = await image.getDownloadURL()
     return url
   }
