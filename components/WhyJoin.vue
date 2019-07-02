@@ -3,16 +3,16 @@
     <img
       class="backgroundRiver"
       src="../static/cRiver.png"
-    />
+    >
     <div class="spacing">
       <h2>
         Why join nwPlus?
       </h2>
-      <br />
+      <br>
       <b-row>
         <b-col id="cConnect">
-          <img src="../static/cConnect.png" />
-          <br /><br />
+          <img src="../static/cConnect.png">
+          <br><br>
           <div class="cbd">
             Connect
           </div>
@@ -21,8 +21,8 @@
           </p>
         </b-col>
         <b-col id="cBuild">
-          <img src="../static/cBuild.png" />
-          <br /><br />
+          <img src="../static/cBuild.png">
+          <br><br>
           <div class="cbd">
             Build
           </div>
@@ -31,8 +31,8 @@
           </p>
         </b-col>
         <b-col id="cDiscover">
-          <img src="../static/cDiscover.png" />
-          <br /><br />
+          <img src="../static/cDiscover.png">
+          <br><br>
           <div class="cbd">
             Discover
           </div>

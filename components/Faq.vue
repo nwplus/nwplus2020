@@ -5,7 +5,8 @@
       v-for="item in items"
       :key="item.question"
       :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft flexbox' : 'faqBoxRight flexbox']"
-    > <button
+    >
+      <button
         class="accordion"
         @click="openSesame"
       >
