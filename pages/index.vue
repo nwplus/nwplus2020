@@ -76,4 +76,8 @@ export default {
 .links {
   padding-top: 15px;
 }
+
+p {
+  font-family: "HKConcentrate-Medium";
+}
 </style>

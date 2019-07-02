@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="whyjoin">
     <img
       class="backgroundRiver"
       src="../static/cRiver.png"
@@ -78,7 +78,7 @@ h2 {
   width: 87vw;
   color: #0c2264;
 }
-img {
+.whyjoin img {
   width: 277px;
   height: 277px;
   box-sizing: content-box;
@@ -90,8 +90,7 @@ img {
   font-weight: bold;
   text-align: center;
 }
-p {
-  font-family: "HKConcentrate-Medium";
+.whyjoin p {
   padding: 1.5% 15%;
   font-size: 18px;
   /* font-weight: 480; */

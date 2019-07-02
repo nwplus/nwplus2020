@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="faq">
     <h1>FAQ</h1>
     <div
       v-for="item in items"
       :key="item.question"
-      :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft flexbox' : 'faqBoxRight flexbox']"
+      :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft faq-flexbox' : 'faqBoxRight faq-flexbox']"
     >
       <button
         class="accordion"
@@ -43,7 +43,10 @@ export default {
 </script>
 
 <style>
-.flexbox {
+.faq {
+  margin-bottom: 200px;
+}
+.faq-flexbox {
   display: flex;
   border: 1px solid aqua;
   border-radius: 10px;

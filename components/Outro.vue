@@ -16,7 +16,11 @@ export default {
 </script>
 
 <style>
+.outro {
+  align-items: center;
+}
 .outro p {
+  margin: auto;
   max-width: 670px;
   text-align: left;
 }
