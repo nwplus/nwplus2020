@@ -1,17 +1,19 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <welcome :info="info" />
-      <h1 class="title">
-        nwPlus 2020
-      </h1>
-      <WhyJoin />
-      <faq :items="items" />
-    </div>
-  </section>
-    <Footer />
+  <div>
+    <section class="container">
+      <div>
+        <logo />
+        <welcome :info="info" />
+        <h1 class="title">
+          nwPlus 2020
+        </h1>
+        <WhyJoin />
+        <faq :items="items" />
         <Outro :text="outro" />
+      </div>
+    </section>
+    <Footer :text="footer" />
+  </div>
 </template>
 
 <script>
@@ -27,8 +29,8 @@ export default {
     Logo,
     Welcome,
     Faq,
+    WhyJoin,
     Outro,
-    WhyJoin
     Footer
   },
   asyncData: async () => {
