@@ -8,6 +8,7 @@
       >
         <a
           :href="item.url"
+          target="_blank"
         >
           <img
             :src="item.imageURL"
