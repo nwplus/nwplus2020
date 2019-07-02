@@ -1,13 +1,13 @@
 <template>
   <div class="bottom">
     <div class="left">
-      <img class="left-fg" src="../static/footer/left-fg.png">
-      <img class="left-bg" src="../static/footer/left-bg.png">
-      <img class="bike" src="../static/footer/bike.png">
+      <img class="left-fg" src="../static/footer/left-fg.png" />
+      <img class="left-bg" src="../static/footer/left-bg.png" />
+      <img class="bike" src="../static/footer/bike.png" />
     </div>
     <div class="right">
-      <img class="right-fg" src="../static/footer/right-fg.png">
-      <img class="right-bg" src="../static/footer/right-bg.png">
+      <img class="right-fg" src="../static/footer/right-fg.png" />
+      <img class="right-bg" src="../static/footer/right-bg.png" />
     </div>
     <div class="footer">
       <a href="https://www.facebook.com/nwplusubc/">
