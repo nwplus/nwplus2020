@@ -4,11 +4,9 @@
       <logo />
       <welcome :info="info" />
       <h1 class="title">
-        NwPlus2020
+        nwPlus 2020
       </h1>
-      <h2 class="subtitle">
-        The NwPlus website
-      </h2>
+      <WhyJoin />
       <faq :items="items" />
       <Sponsors :items="Sponsors" />
     </div>
@@ -20,13 +18,15 @@ import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
 import Sponsors from '~/components/Sponsors.vue'
+import WhyJoin from '~/components/WhyJoin.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
   components: {
     Logo,
     Welcome,
-    Faq,
+    WhyJoin
     Sponsors
+    Faq,
   },
   asyncData: async () => {
     // functions
