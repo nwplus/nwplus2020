@@ -24,9 +24,9 @@ export default {
   components: {
     Logo,
     Welcome,
-    WhyJoin
-    Sponsors
-    Faq,
+    WhyJoin,
+    Sponsors,
+    Faq
   },
   asyncData: async () => {
     // functions
