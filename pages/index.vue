@@ -1,8 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <logo />
-      <welcome :info="info" />
+      <NavBar/>
       <h1 class="title">
         nwPlus 2020
       </h1>
@@ -13,15 +12,13 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import Welcome from '~/components/Welcome.vue'
+import NavBar from '~/components/NavBar.vue'
 import Faq from '~/components/Faq.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
   components: {
-    Logo,
-    Welcome,
+    NavBar,
     Faq,
     WhyJoin
   },

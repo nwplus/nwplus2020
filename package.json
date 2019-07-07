@@ -21,7 +21,8 @@
     "firebase": "^6.1.0",
     "jquery": "1.9.1",
     "nuxt": "latest",
-    "popper.js": "1.14.7"
+    "popper.js": "1.14.7",
+    "vue-router": "^3.0.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
