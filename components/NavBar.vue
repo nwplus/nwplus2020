@@ -1,26 +1,33 @@
 <template>
-    <nav>
-        <!-- use vue-router and <router-link> -->
-        <a href="/">About</a>
-        <a href="/">Events</a>
-        <a href="/">Local Hack Day</a>
-        <a href="/">Contact us</a>
-    </nav>
+  <nav>
+    <!-- use vue-router and <router-link> -->
+    <nuxt-link to="/about" class="nuxt-link">
+      About
+    </nuxt-link>
+    <nuxt-link to="/events" class="nuxt-link">
+      Events
+    </nuxt-link>
+    <nuxt-link to="/lhd" class="nuxt-link">
+      Local Hack Day
+    </nuxt-link>
+    <nuxt-link to="/contact" class="nuxt-link">
+      Contact us
+    </nuxt-link>
+  </nav>
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
 
 <style scoped>
 .navbar {
-    /* flexbox etc */
+  /* flexbox etc */
 }
-.routerLink {
-    /* links themselves */
+.nuxt-link {
+  font-size: 24px;
 }
-#nwplusLogo {
-    /* icon in top left */
+#nwplus-logo {
+  /* icon in top left */
 }
 </style>
