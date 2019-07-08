@@ -10,13 +10,18 @@
         class="accordion"
         @click="openSesame"
       >
-        {{ item.question }}
+        <button
+          class="accordion"
+          @click="openSesame"
+        >
+          {{ item.question }}
+        </button>
+        <div class="panel">
+          <p>
+            {{ item.answer }}
+          </p>
+        </div>
       </button>
-      <div class="panel">
-        <p>
-          {{ item.answer }}
-        </p>
-      </div>
     </div>
   </div>
 </template>

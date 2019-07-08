@@ -10,6 +10,7 @@
         <WhyJoin />
         <faq :items="items" />
         <Outro :text="outro" />
+        <Sponsors :items="Sponsors" />
       </div>
     </section>
     <Footer :text="footer" />
@@ -20,6 +21,7 @@
 import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
+import Sponsors from '~/components/Sponsors.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
 import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
@@ -31,13 +33,25 @@ export default {
     Faq,
     WhyJoin,
     Outro,
-    Footer
+    Footer,
+    Sponsors
   },
   asyncData: async () => {
+    // functions
+    const getSponsorImage = async (sponsor) => {
+      sponsor.imageURL = await fireDb.getImageUrl(sponsor.image)
+      return sponsor
+    }
+    // data
     const data = await fireDb.get()
     const listOfFaq = await fireDb.getFAQ()
-    return { info: data.WelcomeText,
+    const listOfSponsors = await fireDb.getSponsors()
+    // Populate sponsors with their image urls
+    const populatedSponsors = await Promise.all(listOfSponsors.map(sponsor => getSponsorImage(sponsor)))
+    return {
+      info: data.WelcomeText,
       items: listOfFaq,
+      Sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText
     }
