@@ -1,20 +1,23 @@
 <template>
   <div>
     <h1>FAQ</h1>
-    <div
-      v-for="item in items"
-      :key="item.question"
-      :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft flexbox' : 'faqBoxRight flexbox']"
-    > <button
-        class="accordion"
-        @click="openSesame"
+    <div :class="'faqcontainer'">
+      <div
+        v-for="item in items"
+        :key="item.question"
+        :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft flexbox' : 'faqBoxRight flexbox']"
       >
-        {{ item.question }}
-      </button>
-      <div class="panel">
-        <p>
-          {{ item.answer }}
-        </p>
+        <button
+          class="accordion"
+          @click="openSesame"
+        >
+          {{ item.question }}
+        </button>
+        <div class="panel">
+          <p>
+            {{ item.answer }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -42,6 +45,10 @@ export default {
 </script>
 
 <style>
+.faqcontainer {
+  display: inline-block;
+  width: 100%;
+}
 .flexbox {
   display: flex;
   border: 1px solid aqua;
