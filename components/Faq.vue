@@ -1,11 +1,14 @@
 <template>
-  <div>
+  <div class="faq">
     <h1>FAQ</h1>
-    <div :class="'faqcontainer'">
-      <div
-        v-for="item in items"
-        :key="item.question"
-        :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft flexbox' : 'faqBoxRight flexbox']"
+    <div
+      v-for="item in items"
+      :key="item.question"
+      :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft faq-flexbox' : 'faqBoxRight faq-flexbox']"
+    >
+      <button
+        class="accordion"
+        @click="openSesame"
       >
         <button
           class="accordion"
@@ -18,7 +21,7 @@
             {{ item.answer }}
           </p>
         </div>
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -45,11 +48,10 @@ export default {
 </script>
 
 <style>
-.faqcontainer {
-  display: inline-block;
-  width: 100%;
+.faq {
+  margin-bottom: 200px;
 }
-.flexbox {
+.faq-flexbox {
   display: flex;
   border: 1px solid aqua;
   border-radius: 10px;
