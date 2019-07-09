@@ -52,6 +52,15 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    postcss: {
+      plugins: {
+        'postcss-preset-env': {
+          features: {
+            customProperties: false
+          }
+        }
+      }
+    },
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
