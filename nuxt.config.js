@@ -41,7 +41,7 @@ export default {
   */
   modules: [
     '@nuxtjs/dotenv',
-    'bootstrap-vue/nuxt',
+    '@nuxtjs/bulma',
     '@nuxtjs/svg-sprite'
   ],
 
