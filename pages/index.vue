@@ -3,7 +3,7 @@
     <section class="container">
       <div>
         <logo />
-        <Email/>
+        <Email />
         <welcome :info="info" />
         <h1 class="title">
           nwPlus 2020
