@@ -41,6 +41,7 @@ export default {
   */
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
     '@nuxtjs/svg-sprite',
     'nuxt-buefy',
     ['nuxt-buefy', { /* buefy options */ }]
