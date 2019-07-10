@@ -41,8 +41,9 @@ export default {
   */
   modules: [
     '@nuxtjs/dotenv',
-    'bootstrap-vue/nuxt',
-    '@nuxtjs/svg-sprite'
+    '@nuxtjs/svg-sprite',
+    'nuxt-buefy',
+    ['nuxt-buefy', { /* buefy options */ }]
   ],
 
   /*
