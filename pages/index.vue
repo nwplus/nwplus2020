@@ -3,6 +3,7 @@
     <section class="container">
       <div>
         <logo />
+        <Email/>
         <welcome :info="info" />
         <h1 class="title">
           nwPlus 2020
@@ -26,6 +27,7 @@ import WhyJoin from '~/components/WhyJoin.vue'
 import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
+import Email from '~/components/Email.vue'
 export default {
   components: {
     Logo,
@@ -34,7 +36,8 @@ export default {
     WhyJoin,
     Outro,
     Footer,
-    Sponsors
+    Sponsors,
+    Email
   },
   asyncData: async () => {
     // functions
