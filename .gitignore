@@ -84,3 +84,5 @@ dist
 sw.*
 
 \.DS_Store
+
+functions/\.runtimeconfig\.json
