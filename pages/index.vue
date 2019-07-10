@@ -1,31 +1,58 @@
 <template>
-  <section class="container">
-    <div>
-      <NavBar/>
-      <h1 class="title">
-        nwPlus 2020
-      </h1>
-      <WhyJoin />
-      <faq :items="items" />
-    </div>
-  </section>
+  <div>
+    <section class="container">
+      <div>
+        <logo />
+        <welcome :info="info" />
+        <h1 class="title">
+          nwPlus 2020
+        </h1>
+        <WhyJoin />
+        <faq :items="items" />
+        <Outro :text="outro" />
+        <Sponsors :items="Sponsors" />
+      </div>
+    </section>
+    <Footer :text="footer" />
+  </div>
 </template>
 
 <script>
 import NavBar from '~/components/NavBar.vue'
 import Faq from '~/components/Faq.vue'
+import Sponsors from '~/components/Sponsors.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
+import Outro from '~/components/Outro.vue'
+import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 export default {
   components: {
     NavBar,
     Faq,
-    WhyJoin
+    WhyJoin,
+    Outro,
+    Footer,
+    Sponsors
   },
   asyncData: async () => {
+    // functions
+    const getSponsorImage = async (sponsor) => {
+      sponsor.imageURL = await fireDb.getImageUrl(sponsor.image)
+      return sponsor
+    }
+    // data
     const data = await fireDb.get()
     const listOfFaq = await fireDb.getFAQ()
-    return { info: data.WelcomeText, items: listOfFaq }
+    const listOfSponsors = await fireDb.getSponsors()
+    // Populate sponsors with their image urls
+    const populatedSponsors = await Promise.all(listOfSponsors.map(sponsor => getSponsorImage(sponsor)))
+    return {
+      info: data.WelcomeText,
+      items: listOfFaq,
+      Sponsors: populatedSponsors,
+      outro: data.OutroText,
+      footer: data.FooterText
+    }
   }
 }
 </script>
@@ -33,7 +60,7 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,5 +87,9 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+p {
+  font-family: "HKConcentrate-Medium";
 }
 </style>

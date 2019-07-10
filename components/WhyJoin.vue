@@ -1,18 +1,18 @@
 <template>
-  <div>
+  <div class="whyjoin">
     <img
       class="backgroundRiver"
       src="../static/cRiver.png"
-    />
+    >
     <div class="spacing">
       <h2>
         Why join nwPlus?
       </h2>
-      <br />
+      <br>
       <b-row>
         <b-col id="cConnect">
-          <img src="../static/cConnect.png" />
-          <br /><br />
+          <img src="../static/cConnect.png">
+          <br><br>
           <div class="cbd">
             Connect
           </div>
@@ -21,8 +21,8 @@
           </p>
         </b-col>
         <b-col id="cBuild">
-          <img src="../static/cBuild.png" />
-          <br /><br />
+          <img src="../static/cBuild.png">
+          <br><br>
           <div class="cbd">
             Build
           </div>
@@ -31,8 +31,8 @@
           </p>
         </b-col>
         <b-col id="cDiscover">
-          <img src="../static/cDiscover.png" />
-          <br /><br />
+          <img src="../static/cDiscover.png">
+          <br><br>
           <div class="cbd">
             Discover
           </div>
@@ -78,7 +78,7 @@ h2 {
   width: 87vw;
   color: #0c2264;
 }
-img {
+.whyjoin img {
   width: 277px;
   height: 277px;
   box-sizing: content-box;
@@ -90,8 +90,7 @@ img {
   font-weight: bold;
   text-align: center;
 }
-p {
-  font-family: "HKConcentrate-Medium";
+.whyjoin p {
   padding: 1.5% 15%;
   font-size: 18px;
   /* font-weight: 480; */
