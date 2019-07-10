@@ -1,51 +1,57 @@
 <template>
   <div class="whyjoin">
-    <img
+    <!-- <img
       class="backgroundRiver"
       src="../static/cRiver.png"
-    >
+    > -->
     <div class="spacing">
       <h2>
         Why join nwPlus?
       </h2>
       <br>
-      <b-row>
-        <b-col id="cConnect">
-          <img src="../static/cConnect.png">
-          <br><br>
-          <div class="cbd">
-            Connect
+      <div class="columns">
+        <div class="column" id="cConnect">
+          <div>
+            <img src="../static/cConnect.png">
+            <br><br>
+            <div class="cbd">
+              Connect
+            </div>
+            <p>
+              Meet other students who are passionate about the tech space through our events and workshops.
+            </p>
+            </div>
+        </div>
+        <div class="column" id="cBuild">
+          <div>
+            <img src="../static/cBuild.png">
+            <br><br>
+            <div class="cbd">
+              Build
+            </div>
+            <p>
+              Learn a new programming language or a new web framework at our hack nights and technical workshops.
+            </p>
           </div>
-          <p>
-            Meet other students who are passionate about the tech space through our events and workshops.
-          </p>
-        </b-col>
-        <b-col id="cBuild">
-          <img src="../static/cBuild.png">
-          <br><br>
-          <div class="cbd">
-            Build
+        </div>
+        <div class="column" id="cDiscover">
+          <div>
+            <img src="../static/cDiscover.png">
+            <br><br>
+            <div class="cbd">
+              Discover
+            </div>
+            <p>
+              With events like nwHacks, you’ll have the opportunity to collaborate on real projects with developers and designers with the support of industry mentors.
+            </p>
           </div>
-          <p>
-            Learn a new programming language or a new web framework at our hack nights and technical workshops.
-          </p>
-        </b-col>
-        <b-col id="cDiscover">
-          <img src="../static/cDiscover.png">
-          <br><br>
-          <div class="cbd">
-            Discover
-          </div>
-          <p>
-            With events like nwHacks, you’ll have the opportunity to collaborate on real projects with developers and designers with the support of industry mentors.
-          </p>
-        </b-col>
-      </b-row>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 @font-face {
   font-family: "HKConcentrate-Bold";
@@ -55,14 +61,14 @@
   font-family: "HKConcentrate-Medium";
   src: url("../assets/fonts/HKConcentrate-Medium.woff") format("woff");
 }
-.backgroundRiver {
+/* .backgroundRiver {
   position: absolute;
   z-index: -10;
   width: 100%;
   left: 0;
   height: 1124px;
   top: 18vh;
-}
+} */
 h2 {
   font-family: "Merriweather", serif;
   width: 30%;
@@ -80,7 +86,6 @@ h2 {
 }
 .whyjoin img {
   width: 277px;
-  height: 277px;
   box-sizing: content-box;
 }
 .cbd {
@@ -93,7 +98,6 @@ h2 {
 .whyjoin p {
   padding: 1.5% 15%;
   font-size: 18px;
-  /* font-weight: 480; */
   line-height: 22px;
   text-align: center;
 }
