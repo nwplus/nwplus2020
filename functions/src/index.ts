@@ -12,7 +12,9 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
     response.set('Access-Control-Allow-Headers', 'Content-Type, crossDomain');
     if (request.body.email_address == undefined ||
         request.body.first_name == undefined ||
-        request.body.last_name == undefined){
+        request.body.last_name == undefined || 
+        request.body.major == undefined ||
+        request.body.grad == undefined) {
             response.sendStatus(400)
             return
         }
@@ -24,7 +26,9 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
                     "status": 'subscribed',
                     'merge_fields': {
                         'First Name': request.body.first_name,
-                        'Last Name': request.body.last_name
+                        'Last Name': request.body.last_name,
+                        'Major': request.body.major,
+                        'Graduation Year': request.body.grad
                     }
                 },
             ]})
