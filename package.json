@@ -1,7 +1,7 @@
 {
-  "name": "LHD2020",
+  "name": "nwPlus",
   "version": "1.0.0",
-  "description": "The LHD website",
+  "description": "The NwPlus Website website",
   "author": "Nwplus Dev Team",
   "private": true,
   "scripts": {

@@ -3,15 +3,12 @@
     <section class="container">
       <div>
         <logo />
-        <Email />
         <welcome :info="info" />
-        <h1 class="title">
-          nwPlus 2020
-        </h1>
         <WhyJoin />
         <Events :items="events" />
         <Faq :items="items" />
         <Outro :text="outro" />
+        <Email />
         <Sponsors :items="Sponsors" />
       </div>
     </section>

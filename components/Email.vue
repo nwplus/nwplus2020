@@ -1,13 +1,47 @@
 <template>
-  <div class="email">
-    <input v-model="email" :placeholder="'Email'">
-    <input v-model="firstName" :placeholder="'First Name'">
-    <input v-model="lastName" :placeholder="'Last Name'">
-    <input v-model="major" :placeholder="'Major'">
-    <input v-model="grad" :placeholder="'Graduation Year'">
-    <button @click="submit">
-      Submit
-    </button>
+  <div class="emailContainer">
+    <section class="email">
+      <h1>News letter signup </h1>
+      <b-field>
+        <b-input v-model="email" placeholder="Email" type="email" />
+      </b-field>
+      <b-field>
+        <b-input
+          v-model="firstName"
+          placeholder="First Name"
+          type="text"
+          required
+        />
+      </b-field>
+      <b-field>
+        <b-input
+          v-model="lastName"
+          placeholder="Last Name"
+          type="text"
+          required
+        />
+      </b-field>
+      <b-field>
+        <b-input
+          v-model="major"
+          placeholder="Major"
+          type="text"
+          required
+        />
+      </b-field>
+      <b-field>
+        <b-input
+          v-model="grad"
+          placeholder="Grad Year"
+          type="number"
+          min="2019"
+          max="2030"
+        />
+      </b-field>
+      <b-button type="is-success" @click="submit">
+        Submit
+      </b-button>
+    </section>
   </div>
 </template>
 
@@ -73,6 +107,9 @@ export default {
 
 </script>
 
-<style>
-
+<style scoped>
+.email {
+  max-width: 50%;
+  margin: 0 auto;
+}
 </style>
