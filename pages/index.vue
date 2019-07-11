@@ -39,7 +39,7 @@ export default {
     Outro,
     Footer,
     Sponsors,
-    Events
+    Events,
     Email
   },
   asyncData: async () => {
