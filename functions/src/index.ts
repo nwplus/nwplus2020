@@ -13,11 +13,12 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
     if (request.body.email_address == undefined ||
         request.body.first_name == undefined ||
         request.body.last_name == undefined){
-            response.sendStatus(500)
+            console.log("Undefined vars")
+            response.sendStatus(400)
             return
         }
     try {
-        const reply = await mailchimp.post('lists/01b28e7322/', {
+        const reply = await mailchimp.post('lists/d405dfd8ce/', {
             members: [
                 {
                     "email_address": request.body.email_address,
@@ -28,11 +29,18 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
                     }
                 },
             ]})
-        console.log(JSON.stringify(reply, null, 4))
+        if (reply.error_count > 0){
+            console.log(JSON.stringify(reply, null, 4))
+            console.log("Mailchimp API error")
+            response.status(502).send(reply.errors[0])
+            return
+        }
     }catch (e){
         console.log('error!!!!')
         console.log(JSON.stringify(e.errors, null, 4))
         response.sendStatus(500)
+        return
     }
+    console.log("Sucess!")
     response.sendStatus(200)
 });
