@@ -18,6 +18,7 @@ const webCollection = 'Website_content'
 const WebDocument = process.env.WEBSITE_NAME
 const Faq = 'Faq'
 const Sponsors = 'Sponsors'
+const Events = 'Events'
 
 const fireDb = {
   get: async () => {
@@ -43,6 +44,13 @@ const fireDb = {
     const image = storage.ref(`${WebDocument}/${imageref}`)
     const url = await image.getDownloadURL()
     return url
+  },
+  getEvents: async () => {
+    const ref = db
+      .collection(webCollection)
+      .doc(WebDocument)
+      .collection(Events)
+    return (await ref.get()).docs.map(doc => doc.data())
   }
 }
 

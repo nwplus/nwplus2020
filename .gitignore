@@ -86,3 +86,5 @@ sw.*
 \.DS_Store
 
 functions/\.runtimeconfig\.json
+
+functions/lib/
