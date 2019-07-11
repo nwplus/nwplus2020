@@ -13,7 +13,6 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
     if (request.body.email_address == undefined ||
         request.body.first_name == undefined ||
         request.body.last_name == undefined){
-            console.log("Undefined vars")
             response.sendStatus(400)
             return
         }
@@ -30,17 +29,14 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
                 },
             ]})
         if (reply.error_count > 0){
-            console.log(JSON.stringify(reply, null, 4))
-            console.log("Mailchimp API error")
-            response.status(502).send(reply.errors[0])
+            console.log("Mailchimp errors")
+            response.status(502).send({errors: reply.errors[0]})
             return
         }
     }catch (e){
-        console.log('error!!!!')
-        console.log(JSON.stringify(e.errors, null, 4))
+        console.log("Server error")
         response.sendStatus(500)
         return
     }
-    console.log("Sucess!")
     response.sendStatus(200)
 });
