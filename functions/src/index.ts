@@ -17,7 +17,7 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
             return
         }
     try {
-        await mailchimp.post('lists/01b28e7322/', {
+        const reply = await mailchimp.post('lists/01b28e7322/', {
             members: [
                 {
                     "email_address": request.body.email_address,
@@ -28,6 +28,7 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
                     }
                 },
             ]})
+        console.log(JSON.stringify(reply, null, 4))
     }catch (e){
         console.log('error!!!!')
         console.log(JSON.stringify(e.errors, null, 4))
