@@ -7,17 +7,17 @@
       v-for="item in items"
       :key="item.title"
     >
-    <div class="columns white">
-      <img class="column imgResize" :src="item.imageLink">
-      <div class="column">
-        <p class="title">
-          {{ item.title }}
-        </p>
-        <br>
-        <p class="text">
-          {{ item.text }}
-        </p>
-        <br>
+      <div class="columns white">
+        <img class="column imgResize" :src="item.imageLink">
+        <div class="column">
+          <p class="title">
+            {{ item.title }}
+          </p>
+          <br>
+          <p class="text">
+            {{ item.text }}
+          </p>
+          <br>
           <a
             :href="item.learnMoreLink"
             target="_blank"

@@ -10,7 +10,7 @@
       </h2>
       <br>
       <div class="columns">
-        <div class="column" id="cConnect">
+        <div id="cConnect" class="column">
           <div>
             <img src="../static/cConnect.png">
             <br><br>
@@ -20,9 +20,9 @@
             <p>
               Meet other students who are passionate about the tech space through our events and workshops.
             </p>
-            </div>
+          </div>
         </div>
-        <div class="column" id="cBuild">
+        <div id="cBuild" class="column">
           <div>
             <img src="../static/cBuild.png">
             <br><br>
@@ -34,7 +34,7 @@
             </p>
           </div>
         </div>
-        <div class="column" id="cDiscover">
+        <div id="cDiscover" class="column">
           <div>
             <img src="../static/cDiscover.png">
             <br><br>
