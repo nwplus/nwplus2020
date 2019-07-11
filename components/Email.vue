@@ -47,7 +47,15 @@ export default {
         if (reply.status === 502) {
           this.$toast.open({
             duration: 5000,
-            message: `A mailchimp error occured. You may have already signed up.`,
+            message: `A mailchimp error occured: ${reply.data.errors.error}`,
+            position: 'is-bottom',
+            type: 'is-danger'
+          })
+        }
+        if (reply.status === 400) {
+          this.$toast.open({
+            duration: 5000,
+            message: `Please fill out all fields!`,
             position: 'is-bottom',
             type: 'is-danger'
           })
