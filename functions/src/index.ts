@@ -45,11 +45,14 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
                 response.status(502).send({errors: 'Unexpected Mailchimp error'})
                 return
             }
+        }else {
+            response.sendStatus(200)
+            return
         }
+
     }catch (e){
         console.log("Server error")
         response.sendStatus(500)
         return
     }
-    response.sendStatus(200)
 });

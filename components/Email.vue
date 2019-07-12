@@ -73,7 +73,8 @@ export default {
           this.$toast.open({
             duration: 5000,
             message: `Sucessfully added you to our mailing list!`,
-            type: 'is-success'
+            type: 'is-success',
+            position: 'is-bottom'
           })
         }
         if (reply.status === 500) {
