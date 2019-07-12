@@ -3,12 +3,12 @@
     <section class="container">
       <div>
         <logo />
+        <Email />
         <welcome :info="info" />
         <WhyJoin />
         <Events :items="events" />
         <Faq :items="items" />
         <Outro :text="outro" />
-        <Email />
         <Sponsors :items="Sponsors" />
       </div>
     </section>

@@ -1,15 +1,13 @@
 <template>
-  <div class="emailContainer">
-    <section class="email">
-      <h1>News letter signup </h1>
-      <b-field>
-        <b-input v-model="email" placeholder="Email" type="email" />
-      </b-field>
+  <section>
+    <h1>Newsletter signup </h1>
+    <div class="container is-fluid">
+      <b-input v-model="email" class="emailInput" placeholder="Email" type="email" />
       <b-button type="is-success" @click="submit">
-        Submit
+        Subscribe!
       </b-button>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -64,9 +62,8 @@ export default {
 
 </script>
 
-<style scoped>
-.email {
-  max-width: 50%;
-  margin: 0 auto;
+<style>
+.emailInput {
+  min-width: 30%;
 }
 </style>
