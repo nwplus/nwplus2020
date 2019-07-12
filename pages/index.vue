@@ -2,11 +2,7 @@
   <div>
     <section class="container">
       <div>
-        <logo />
-        <welcome :info="info" />
-        <h1 class="title">
-          nwPlus 2020
-        </h1>
+        <NavBar />
         <WhyJoin />
         <faq :items="items" />
         <Outro :text="outro" />
@@ -45,7 +41,9 @@ export default {
     const listOfFaq = await fireDb.getFAQ()
     const listOfSponsors = await fireDb.getSponsors()
     // Populate sponsors with their image urls
-    const populatedSponsors = await Promise.all(listOfSponsors.map(sponsor => getSponsorImage(sponsor)))
+    const populatedSponsors = await Promise.all(
+      listOfSponsors.map(sponsor => getSponsorImage(sponsor))
+    )
     return {
       info: data.WelcomeText,
       items: listOfFaq,

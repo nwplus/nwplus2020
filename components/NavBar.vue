@@ -2,10 +2,14 @@
   <nav>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-        </a>
-
+        <nuxt-link to="/" class="navbar-item">
+          <img
+            id="navbar-logo"
+            class="navbar-item"
+            src="../assets/sprite/svg/nwplus-logo.svg"
+            alt="nwPlus logo"
+          >
+        </nuxt-link>
         <a
           role="button"
           class="navbar-burger burger"
@@ -18,7 +22,6 @@
           <span aria-hidden="true" />
         </a>
       </div>
-
       <div id="navbar" class="navbar-menu">
         <div class="navbar-start" />
         <div class="navbar-end">
@@ -57,6 +60,11 @@ export default {}
 .navbar-item:hover {
   color: #0c2264;
   background: none;
+}
+#navbar-logo {
+  max-height: none;
+  height: 59px;
+  width: auto;
 }
 .nuxt-link {
   font-size: 24px;
