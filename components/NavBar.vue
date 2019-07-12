@@ -56,15 +56,22 @@ export default {}
 .navbar-item {
   font-size: 24px;
   color: white;
+  font-family: "HKConcentrate-Medium";
+  padding: 8px 32px;
 }
 .navbar-item:hover {
   color: #0c2264;
   background: none;
 }
+.buttons {
+  margin-right: 78px;
+}
 #navbar-logo {
   max-height: none;
   height: 59px;
   width: auto;
+  box-sizing: border-box;
+  padding: 0;
 }
 .nuxt-link {
   font-size: 24px;
