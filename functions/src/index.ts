@@ -10,11 +10,11 @@ const mailchimp = new Mailchimp(API_KEY)
 export const SubscribeToMailingList = functions.https.onRequest(async (request, response) => {
     response.set('Access-Control-Allow-Origin', '*');
     response.set('Access-Control-Allow-Headers', 'Content-Type, crossDomain');
-    if (request.body.email_address == undefined ||
-        request.body.first_name == undefined ||
-        request.body.last_name == undefined || 
-        request.body.major == undefined ||
-        request.body.grad == undefined) {
+    if (request.body.email_address == '' ||
+        request.body.first_name == '' ||
+        request.body.last_name == '' || 
+        request.body.major == '' ||
+        request.body.grad == '') {
             response.sendStatus(400)
             return
         }
@@ -34,8 +34,17 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
             ]})
         if (reply.error_count > 0){
             console.log("Mailchimp errors")
-            response.status(502).send({errors: reply.errors[0]})
-            return
+            const error: String = reply.errors[0].error
+            if (error.indexOf('already a list member') !== -1) {
+                response.status(502).send({errors: 'This email has already signed up'})
+                return
+            }else if (error.indexOf('looks fake or invalid') !== -1) {
+                response.status(502).send({errors: error})
+                return
+            }else {
+                response.status(502).send({errors: 'Unexpected Mailchimp error'})
+                return
+            }
         }
     }catch (e){
         console.log("Server error")

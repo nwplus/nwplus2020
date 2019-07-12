@@ -87,7 +87,7 @@ export default {
         if (reply.status === 502) {
           this.$toast.open({
             duration: 5000,
-            message: `A mailchimp error occured: ${reply.data.errors.error}`,
+            message: `An error occured: ${reply.data.errors}`,
             position: 'is-bottom',
             type: 'is-danger'
           })
