@@ -1,13 +1,13 @@
 <template>
-  <section>
-    <h1>Newsletter signup </h1>
-    <div class="container is-fluid">
-      <b-input v-model="email" class="emailInput" placeholder="Email" type="email" />
-      <b-button type="is-success" @click="submit">
-        Subscribe!
+  <div class="leftPos" style="padding: 1.5% 8%;">
+    <h1 class="subscribeText"> Subscribe to our newsletter for upcoming events </h1>
+    <div class="container">
+      <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
+      <b-button class="subBtn" @click="submit">
+        Subscribe
       </b-button>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -63,7 +63,36 @@ export default {
 </script>
 
 <style>
+
+.leftPos {
+  justify-content: left;
+  float: left;
+  width: 100vw;
+  /* Help, can't make it stick to the left */
+}
+
 .emailInput {
-  min-width: 30%;
+  position: relative;
+  z-index: 0;
+  width: 30%;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.subscribeText {
+  font-size: 18px;
+  line-height: 23px;
+  font-family: "HKConcentrate-Medium";
+  font-weight: 600;
+  color: #21258A;
+}
+
+.subBtn, .subBtn:hover {
+  background: linear-gradient(180deg, #4DE8C2 0%, #18CDCD 100%, #19CBCB 100%);
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  line-height: 21px;
+  font-family: "HKConcentrate-Bold";
 }
 </style>

@@ -2,7 +2,10 @@
   <div>
     <section class="container">
       <div>
-        <logo />
+        <!-- <logo /> -->
+        <h1>
+        UBC nwPlus Connect, build, discover
+        </h1>
         <Email />
         <welcome :info="info" />
         <WhyJoin />
@@ -17,7 +20,7 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue'
 import Welcome from '~/components/Welcome.vue'
 import Faq from '~/components/Faq.vue'
 import Sponsors from '~/components/Sponsors.vue'
@@ -29,7 +32,7 @@ import Email from '~/components/Email.vue'
 import Events from '~/components/Events.vue'
 export default {
   components: {
-    Logo,
+    // Logo,
     Welcome,
     Faq,
     WhyJoin,
