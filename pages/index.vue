@@ -4,7 +4,8 @@
       <div>
         <NavBar />
         <WhyJoin />
-        <faq :items="items" />
+        <Events :items="events" />
+        <Faq :items="items" />
         <Outro :text="outro" />
         <Sponsors :items="Sponsors" />
       </div>
@@ -21,6 +22,7 @@ import WhyJoin from '~/components/WhyJoin.vue'
 import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
+import Events from '~/components/Events.vue'
 export default {
   components: {
     NavBar,
@@ -28,7 +30,8 @@ export default {
     WhyJoin,
     Outro,
     Footer,
-    Sponsors
+    Sponsors,
+    Events
   },
   asyncData: async () => {
     // functions
@@ -40,6 +43,7 @@ export default {
     const data = await fireDb.get()
     const listOfFaq = await fireDb.getFAQ()
     const listOfSponsors = await fireDb.getSponsors()
+    const listOfEvents = await fireDb.getEvents()
     // Populate sponsors with their image urls
     const populatedSponsors = await Promise.all(
       listOfSponsors.map(sponsor => getSponsorImage(sponsor))
@@ -49,7 +53,8 @@ export default {
       items: listOfFaq,
       Sponsors: populatedSponsors,
       outro: data.OutroText,
-      footer: data.FooterText
+      footer: data.FooterText,
+      events: listOfEvents
     }
   }
 }
