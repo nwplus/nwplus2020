@@ -10,11 +10,7 @@ const mailchimp = new Mailchimp(API_KEY)
 export const SubscribeToMailingList = functions.https.onRequest(async (request, response) => {
     response.set('Access-Control-Allow-Origin', '*');
     response.set('Access-Control-Allow-Headers', 'Content-Type, crossDomain');
-    if (request.body.email_address == '' ||
-        request.body.first_name == '' ||
-        request.body.last_name == '' || 
-        request.body.major == '' ||
-        request.body.grad == '') {
+    if (request.body.email_address == '') {
             response.sendStatus(400)
             return
         }
@@ -23,13 +19,7 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
             members: [
                 {
                     "email_address": request.body.email_address,
-                    "status": 'subscribed',
-                    'merge_fields': {
-                        'First Name': request.body.first_name,
-                        'Last Name': request.body.last_name,
-                        'Major': request.body.major,
-                        'Graduation Year': request.body.grad
-                    }
+                    "status": 'subscribed'
                 },
             ]})
         if (reply.error_count > 0){
