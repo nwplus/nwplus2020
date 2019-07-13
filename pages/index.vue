@@ -1,8 +1,8 @@
 <template>
   <div>
+    <NavBar />
     <section class="container">
       <div>
-        <NavBar />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Faq :items="items" />
@@ -68,6 +68,8 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: -1;
 }
 
 .title {
