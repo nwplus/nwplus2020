@@ -3,8 +3,8 @@
     <section class="container">
       <div>
         <NavBar />
-        <WhyJoin />
-        <Events :items="events" />
+        <WhyJoin id="whyJoin" />
+        <Events id="events" :items="events" />
         <Faq :items="items" />
         <Outro :text="outro" />
         <Sponsors :items="Sponsors" />

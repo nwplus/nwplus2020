@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="sticky">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <nuxt-link to="/" class="navbar-item">
@@ -26,15 +26,15 @@
         <div class="navbar-start" />
         <div class="navbar-end">
           <div class="buttons">
-            <nuxt-link to="/about" class="navbar-item">
+            <a v-scroll-to="'#whyJoin'" href="#" class="navbar-item">
               About
-            </nuxt-link>
-            <nuxt-link to="/events" class="navbar-item">
+            </a>
+            <a v-scroll-to="'#events'" href="#" class="navbar-item">
               Events
-            </nuxt-link>
-            <nuxt-link to="/lhd" class="navbar-item">
+            </a>
+            <a href="http://lhd.nwplus.io" class="navbar-item">
               Local Hack Day
-            </nuxt-link>
+            </a>
             <nuxt-link to="/contact" class="navbar-item">
               Contact us
             </nuxt-link>
@@ -52,6 +52,8 @@ export default {}
 <style scoped>
 .navbar {
   background-color: #4d5682;
+  width: 100%;
+  padding: 0;
 }
 .navbar-item {
   font-size: 24px;
@@ -73,8 +75,13 @@ export default {}
   box-sizing: border-box;
   padding: 0;
 }
-.nuxt-link {
+.a {
   font-size: 24px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 #nwplus-logo {
   /* icon in top left */
