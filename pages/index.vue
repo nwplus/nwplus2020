@@ -4,7 +4,7 @@
       <div>
         <!-- <logo /> -->
         <h1>
-        UBC nwPlus Connect, build, discover
+          UBC nwPlus Connect, build, discover
         </h1>
         <Email />
         <welcome :info="info" />
