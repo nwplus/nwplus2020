@@ -1,11 +1,19 @@
 <template>
   <div class="leftPos" style="padding: 1.5% 8%;">
-    <h1 class="subscribeText"> Subscribe to our newsletter for upcoming events </h1>
-    <div class="container">
-      <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
-      <b-button class="subBtn" @click="submit">
-        Subscribe
-      </b-button>
+    <h1 class="subscribeText">
+      Subscribe to our newsletter for upcoming events
+    </h1>
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
+        </div>
+        <div class="level-item">
+          <b-button class="subBtn" @click="submit">
+            Subscribe
+          </b-button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -65,16 +73,14 @@ export default {
 <style>
 
 .leftPos {
-  justify-content: left;
-  float: left;
   width: 100vw;
+  text-align: left
   /* Help, can't make it stick to the left */
 }
 
 .emailInput {
   position: relative;
   z-index: 0;
-  width: 30%;
   box-sizing: border-box;
   border-radius: 4px;
 }
