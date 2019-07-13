@@ -83,6 +83,8 @@ export default {
   z-index: 0;
   box-sizing: border-box;
   border-radius: 4px;
+  width: 313px;
+  padding-right: 0px !important;
 }
 
 .subscribeText {
@@ -91,6 +93,7 @@ export default {
   font-family: "HKConcentrate-Medium";
   font-weight: 600;
   color: #21258A;
+  margin-bottom: 10px;
 }
 
 .subBtn, .subBtn:hover {
