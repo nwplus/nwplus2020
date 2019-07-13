@@ -35,9 +35,9 @@
             <a href="http://lhd.nwplus.io" class="navbar-item">
               Local Hack Day
             </a>
-            <nuxt-link to="/contact" class="navbar-item">
+            <a v-scroll-to="'#contact'" href="#" class="navbar-item">
               Contact us
-            </nuxt-link>
+            </a>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-    <section class="container">
+    <section class="mainSection">
       <div>
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
@@ -10,7 +10,7 @@
         <Sponsors :items="Sponsors" />
       </div>
     </section>
-    <Footer :text="footer" />
+    <Footer id="contact" :text="footer" />
   </div>
 </template>
 
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style>
-.container {
+.mainSection {
   margin: 0 auto;
   /* min-height: 100vh; */
   display: flex;
