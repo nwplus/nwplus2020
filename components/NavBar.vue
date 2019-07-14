@@ -26,18 +26,10 @@
         <div class="navbar-start" />
         <div class="navbar-end">
           <div class="buttons">
-            <a v-scroll-to="'#whyJoin'" href="#" class="navbar-item">
-              About
-            </a>
-            <a v-scroll-to="'#events'" href="#" class="navbar-item">
-              Events
-            </a>
-            <a href="http://lhd.nwplus.io" class="navbar-item">
-              Local Hack Day
-            </a>
-            <a v-scroll-to="'#contact'" href="#" class="navbar-item">
-              Contact us
-            </a>
+            <a v-scroll-to="'#whyJoin'" href="#" class="navbar-item">About</a>
+            <a v-scroll-to="'#events'" href="#" class="navbar-item">Events</a>
+            <a href="http://lhd.nwplus.io" class="navbar-item">Local Hack Day</a>
+            <a v-scroll-to="'#contact'" href="#" class="navbar-item">Contact us</a>
           </div>
         </div>
       </div>
@@ -46,7 +38,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'App',
+  mounted() {
+    const navbar = document.querySelector('.navbar-burger')
+    navbar.addEventListener('click', function () {
+      const target = navbar.dataset.target
+      const $target = document.getElementById(target)
+      navbar.classList.toggle('is-active')
+      $target.classList.toggle('is-active')
+    })
+  }
+}
 </script>
 
 <style scoped>
@@ -84,7 +87,15 @@ export default {}
   top: 0;
   width: 100%;
 }
-#nwplus-logo {
-  /* icon in top left */
+.navbar-brand {
+  align-items: center;
+}
+.navbar-burger {
+  color: white;
+}
+.navbar-end.is-active .buttons {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid blue;
 }
 </style>
