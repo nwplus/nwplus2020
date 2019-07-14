@@ -21,7 +21,8 @@
     "jquery": "^3.4.0",
     "nuxt": "latest",
     "nuxt-buefy": "^0.3.10",
-    "popper.js": "1.14.7"
+    "popper.js": "1.14.7",
+    "vue-scrollto": "^2.15.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
