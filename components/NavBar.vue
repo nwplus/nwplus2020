@@ -47,7 +47,23 @@ export default {
       const $target = document.getElementById(target)
       navbar.classList.toggle('is-active')
       $target.classList.toggle('is-active')
+      console.log($target.classList)
     })
+    window.addEventListener(
+      'resize',
+      function () {
+        const viewportWidth =
+          window.innerWidth || document.documentElement.clientWidth
+        if (viewportWidth > 1024) {
+          const navbarLinks = document.querySelector('#navbar')
+          navbar.classList.remove('is-active')
+          navbarLinks.classList.remove('is-active')
+        } else {
+          console.log('Small viewport')
+        }
+      },
+      false
+    )
   }
 }
 </script>
@@ -93,9 +109,16 @@ export default {
 .navbar-burger {
   color: white;
 }
-.navbar-end.is-active .buttons {
+.is-active .buttons {
   display: flex;
   flex-direction: column;
-  border: 2px solid blue;
+  align-items: center;
+}
+.is-active .buttons .navbar-item {
+  color: #4d5682;
+}
+.is-active-flex .navbar-item {
+  display: block;
+  width: 100%;
 }
 </style>
