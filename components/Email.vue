@@ -1,17 +1,19 @@
 <template>
-  <div class="leftPos" style="padding: 1.5% 8%;">
-    <h1 class="subscribeText">
-      Subscribe to our newsletter for upcoming events
-    </h1>
-    <div class="level">
-      <div class="level-left">
-        <div class="level-item">
-          <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
-        </div>
-        <div class="level-item">
-          <b-button class="subBtn" @click="submit">
-            Subscribe
-          </b-button>
+  <div class="emailContainer">
+    <div class="leftPos" style="padding: 1.5% 8%;">
+      <h1 class="subscribeText">
+        Subscribe to our newsletter for upcoming events
+      </h1>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
+          </div>
+          <div class="level-item">
+            <b-button class="subBtn" @click="submit">
+              Subscribe
+            </b-button>
+          </div>
         </div>
       </div>
     </div>
@@ -71,6 +73,10 @@ export default {
 </script>
 
 <style>
+
+.emailContainer {
+  padding-top: 50px;
+}
 
 .leftPos {
   width: 100vw;
