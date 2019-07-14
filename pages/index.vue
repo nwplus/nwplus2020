@@ -1,26 +1,21 @@
 <template>
   <div>
-    <section class="container">
+    <NavBar />
+    <section class="mainSection">
       <div>
-        <logo />
-        <welcome :info="info" />
-        <h1 class="title">
-          nwPlus 2020
-        </h1>
-        <WhyJoin />
-        <Events :items="events" />
+        <WhyJoin id="whyJoin" />
+        <Events id="events" :items="events" />
         <Faq :items="items" />
         <Outro :text="outro" />
         <Sponsors :items="Sponsors" />
       </div>
     </section>
-    <Footer :text="footer" />
+    <Footer id="contact" :text="footer" />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import Welcome from '~/components/Welcome.vue'
+import NavBar from '~/components/NavBar.vue'
 import Faq from '~/components/Faq.vue'
 import Sponsors from '~/components/Sponsors.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
@@ -30,8 +25,7 @@ import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
 export default {
   components: {
-    Logo,
-    Welcome,
+    NavBar,
     Faq,
     WhyJoin,
     Outro,
@@ -51,7 +45,9 @@ export default {
     const listOfSponsors = await fireDb.getSponsors()
     const listOfEvents = await fireDb.getEvents()
     // Populate sponsors with their image urls
-    const populatedSponsors = await Promise.all(listOfSponsors.map(sponsor => getSponsorImage(sponsor)))
+    const populatedSponsors = await Promise.all(
+      listOfSponsors.map(sponsor => getSponsorImage(sponsor))
+    )
     return {
       info: data.WelcomeText,
       items: listOfFaq,
@@ -65,13 +61,15 @@ export default {
 </script>
 
 <style>
-.container {
+.mainSection {
   margin: 0 auto;
   /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: -1;
 }
 
 .title {
