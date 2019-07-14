@@ -5,7 +5,6 @@
       <div>
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
-        <Faq :items="items" />
         <Outro :text="outro" />
         <Sponsors :items="Sponsors" />
       </div>
@@ -16,7 +15,6 @@
 
 <script>
 import NavBar from '~/components/NavBar.vue'
-import Faq from '~/components/Faq.vue'
 import Sponsors from '~/components/Sponsors.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
 import Outro from '~/components/Outro.vue'
@@ -26,7 +24,6 @@ import Events from '~/components/Events.vue'
 export default {
   components: {
     NavBar,
-    Faq,
     WhyJoin,
     Outro,
     Footer,
@@ -41,7 +38,6 @@ export default {
     }
     // data
     const data = await fireDb.get()
-    const listOfFaq = await fireDb.getFAQ()
     const listOfSponsors = await fireDb.getSponsors()
     const listOfEvents = await fireDb.getEvents()
     // Populate sponsors with their image urls
@@ -50,7 +46,6 @@ export default {
     )
     return {
       info: data.WelcomeText,
-      items: listOfFaq,
       Sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText,
