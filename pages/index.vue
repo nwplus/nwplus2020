@@ -3,6 +3,10 @@
     <NavBar />
     <section class="mainSection">
       <div>
+        <!-- <logo /> -->
+        <h1>
+          UBC nwPlus Connect, build, discover
+        </h1>
         <Email />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
