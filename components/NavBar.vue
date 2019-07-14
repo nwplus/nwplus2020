@@ -47,7 +47,6 @@ export default {
       const $target = document.getElementById(target)
       navbar.classList.toggle('is-active')
       $target.classList.toggle('is-active')
-      console.log($target.classList)
     })
     window.addEventListener(
       'resize',
@@ -58,8 +57,6 @@ export default {
           const navbarLinks = document.querySelector('#navbar')
           navbar.classList.remove('is-active')
           navbarLinks.classList.remove('is-active')
-        } else {
-          console.log('Small viewport')
         }
       },
       false
