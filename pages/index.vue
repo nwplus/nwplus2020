@@ -3,6 +3,11 @@
     <NavBar />
     <section class="mainSection">
       <div>
+        <!-- <logo /> -->
+        <h1>
+          UBC nwPlus Connect, build, discover
+        </h1>
+        <Email />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Outro :text="outro" />
@@ -20,6 +25,7 @@ import WhyJoin from '~/components/WhyJoin.vue'
 import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
+import Email from '~/components/Email.vue'
 import Events from '~/components/Events.vue'
 export default {
   components: {
@@ -28,7 +34,8 @@ export default {
     Outro,
     Footer,
     Sponsors,
-    Events
+    Events,
+    Email
   },
   asyncData: async () => {
     // functions
