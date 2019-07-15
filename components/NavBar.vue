@@ -2,14 +2,14 @@
   <nav class="sticky">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <nuxt-link to="/" class="navbar-item">
+        <a v-scroll-to="'#navbar'" href="#" class="navbar-item">
           <img
             id="navbar-logo"
             class="navbar-item"
             src="../assets/sprite/svg/nwplus-logo.svg"
             alt="nwPlus logo"
           >
-        </nuxt-link>
+        </a>
         <a
           role="button"
           class="navbar-burger burger"
@@ -84,7 +84,9 @@ export default {
   font-family: "HKConcentrate-Medium";
   padding: 8px 32px;
 }
-.navbar-item:hover {
+a.navbar-item:hover,
+a.navbar-item:focus,
+a.navbar-item:focus-within {
   color: #0c2264;
   background: none;
 }
