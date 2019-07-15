@@ -42,6 +42,7 @@ export default {
   name: 'App',
   mounted() {
     const navbar = document.querySelector('.navbar-burger')
+    const navbarLinks = document.querySelector('#navbar')
     navbar.addEventListener('click', function () {
       const target = navbar.dataset.target
       const $target = document.getElementById(target)
@@ -54,13 +55,18 @@ export default {
         const viewportWidth =
           window.innerWidth || document.documentElement.clientWidth
         if (viewportWidth > 1024) {
-          const navbarLinks = document.querySelector('#navbar')
           navbar.classList.remove('is-active')
           navbarLinks.classList.remove('is-active')
         }
       },
       false
     )
+    navbarLinks.addEventListener('click', function () {
+      if (navbar.classList.contains('is-active')) {
+        navbar.classList.remove('is-active')
+        navbarLinks.classList.remove('is-active')
+      }
+    })
   }
 }
 </script>
@@ -113,9 +119,5 @@ export default {
 }
 .is-active .buttons .navbar-item {
   color: #4d5682;
-}
-.is-active-flex .navbar-item {
-  display: block;
-  width: 100%;
 }
 </style>
