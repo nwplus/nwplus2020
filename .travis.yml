@@ -19,4 +19,4 @@ jobs:
     - "lint and test"
     - Build
     - name: Deploy
-    if: branch = master
+      if: branch = master
