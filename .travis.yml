@@ -4,8 +4,24 @@ notifications:
   email: false
 install:
   - yarn install
-script:
-  - yarn lint
-  - yarn test
-  - yarn run build
-  - yarn run generate
+jobs:
+  include:
+    - stage: "lintntest"
+      name: "Lint"
+      script: yarn lint
+    - script: yarn test
+      name: "test"
+    - stage: build
+      script: yarn build
+    - stage: deploy
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+      keep_history: true
+      on:
+        branch: master
+stages:
+  - lintntest
+  - build
+  - name: deploy
+    if: branch = master
