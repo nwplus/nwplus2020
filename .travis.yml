@@ -6,13 +6,17 @@ install:
   - yarn install
 jobs:
   include:
-    - stage: "lintntest"
+    - stage: "lint and test"
       name: "Lint"
       script: yarn lint
     - script: yarn test
       name: "test"
     - stage: build
       script: yarn build
+    - stage: deploy
+      script: echo "helloWorld"
   stages:
-    - lintntest
+    - "lint and test"
     - build
+    - deploy
+      if: branch = master
