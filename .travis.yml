@@ -16,7 +16,5 @@ jobs:
     - stage: Deploy
       script: echo "hello world"
   stages:
-    - "lint and test"
-    - Build
     - name: Deploy
       if: branch = master
