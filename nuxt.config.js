@@ -4,7 +4,7 @@ import pkg from './package'
 // REMOVE THIS WHEN THE DOMAIN HAS BEEN SWITCHEd TO NWPLUS.IO!!!!!!!!!!!!
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/NwPlus2020/'
+    base: '/nwplus2020/'
   }
 } : {}
 
