@@ -2,7 +2,6 @@ import pkg from './package'
 
 export default {
   mode: 'spa',
-  buildDir: 'docs',
   /*
    ** Headers of the page
    */
