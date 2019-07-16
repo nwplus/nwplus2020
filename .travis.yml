@@ -10,13 +10,13 @@ jobs:
       name: "Lint"
       script: yarn lint
     - script: yarn test
-      name: "test"
-    - stage: build
+      name: "Test"
+    - stage: Build
       script: yarn build
-    - stage: deploy
-      script: echo "helloWorld"
+    - stage: Deploy
+      script: echo "hello world"
   stages:
     - "lint and test"
-    - build
-    - name: deploy
-      if: branch = master
+    - Build
+    - name: Deploy
+    if: branch = master
