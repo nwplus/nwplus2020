@@ -18,4 +18,5 @@ jobs:
   stages:
     - "lint and test"
     - build
-    - deploy
+    - name: deploy
+      if: branch = master
