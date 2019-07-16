@@ -14,9 +14,14 @@ jobs:
     - stage: Build
       script: yarn build
     - stage: Deploy
-      script: echo "hello world"
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+      keep_history: true
+      on:
+        branch: master
 stages:
-  - "Build"
   - "Lint and Test"
+  - "Build"
   - name: Deploy
     if: branch = master
