@@ -14,12 +14,15 @@ jobs:
     - stage: Build
       script: yarn build
     - stage: Deploy
-      provider: pages
-      skip_cleanup: true
-      github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-      keep_history: true
-      on:
-        branch: master
+      script: yarn build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep_history: true
+        local_dir: dist
+        on:
+          branch: master
 stages:
   - "Lint and Test"
   - "Build"
