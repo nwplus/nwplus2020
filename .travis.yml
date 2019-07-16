@@ -12,9 +12,9 @@ jobs:
     - script: yarn test
       name: "Test"
     - stage: Build
-      script: yarn build
+      script: yarn generate
     - stage: Deploy
-      script: yarn build
+      script: yarn generate:gh-pages
       deploy:
         provider: pages
         skip_cleanup: true

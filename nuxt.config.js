@@ -1,6 +1,14 @@
 import pkg from './package'
 
+// handles router base depending on if its running in pages or on local
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/NwPlus2020/'
+  }
+} : {}
+
 export default {
+  ...routerBase,
   mode: 'spa',
   /*
    ** Headers of the page
