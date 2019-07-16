@@ -6,7 +6,7 @@ install:
   - yarn install
 jobs:
   include:
-    - stage: "lint and test"
+    - stage: "Lint and Test"
       name: "Lint"
       script: yarn lint
     - script: yarn test
@@ -16,5 +16,7 @@ jobs:
     - stage: Deploy
       script: echo "hello world"
 stages:
+  - "Build"
+  - "Lint and Test"
   - name: Deploy
     if: branch = master
