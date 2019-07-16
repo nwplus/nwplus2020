@@ -15,6 +15,6 @@ jobs:
       script: yarn build
     - stage: Deploy
       script: echo "hello world"
-  stages:
-    - name: Deploy
-      if: branch = master
+stages:
+  - name: Deploy
+    if: branch = master
