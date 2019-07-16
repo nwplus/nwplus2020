@@ -3,11 +3,14 @@
     <NavBar />
     <section class="mainSection">
       <div>
-        <!-- <logo /> -->
-        <h1>
-          UBC nwPlus Connect, build, discover
+        <h1 id="title">
+          UBC nwPlus
+          <div style="font-size: 30px;">
+            Connect, build, discover
+          </div>
         </h1>
         <Email />
+        <Intro :text="intro" :sub="introSub" />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Outro :text="outro" />
@@ -27,6 +30,7 @@ import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 import Email from '~/components/Email.vue'
 import Events from '~/components/Events.vue'
+import Intro from '~/components/Intro.vue'
 export default {
   components: {
     NavBar,
@@ -35,7 +39,8 @@ export default {
     Footer,
     Sponsors,
     Events,
-    Email
+    Email,
+    Intro
   },
   asyncData: async () => {
     // functions
@@ -56,13 +61,27 @@ export default {
       Sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText,
-      events: listOfEvents
+      events: listOfEvents,
+      intro: data.IntroText,
+      introSub: data.IntroSubtext
     }
   }
 }
 </script>
 
 <style>
+#title {
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 60px;
+  margin-top: 20%;
+  color: #0C2264;
+  text-align: left;
+  margin-left: 8%;
+  margin-bottom: 20px;
+}
+
 .mainSection {
   margin: 0 auto;
   /* min-height: 100vh; */
