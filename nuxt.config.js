@@ -1,6 +1,7 @@
 import pkg from './package'
 
 // handles router base depending on if its running in pages or on local
+// REMOVE THIS WHEN THE DOMAIN HAS BEEN SWITCHEd TO NWPLUS.IO!!!!!!!!!!!!
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/NwPlus2020/'
