@@ -19,7 +19,7 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     FIREBASE_MESSAGING_SENDER_ID: '5043243303',
     RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
     WEBSITE_NAME: 'NwPlus_2020',
-    mailingListUrl: ''
+    mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/SubscribeToMailingList'
   }
 } : {
   mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/SubscribeToMailingList/'
