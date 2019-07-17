@@ -18,9 +18,12 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     FIREBASE_STORAGE_BUCKET: 'nwhacks-2019-dev-sponsor-images',
     FIREBASE_MESSAGING_SENDER_ID: '5043243303',
     RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
-    WEBSITE_NAME: 'NwPlus_2020'
+    WEBSITE_NAME: 'NwPlus_2020',
+    mailingListUrl: ''
   }
-} : {}
+} : {
+  mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/SubscribeToMailingList/'
+}
 
 export default {
   ...routerBase,
