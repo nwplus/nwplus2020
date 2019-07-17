@@ -30,7 +30,7 @@ export default {
   methods: {
     async submit() {
       try {
-        await this.$axios.post('http://localhost:5000/nwhacks-2019-dev/us-central1/SubscribeToMailingList/', {
+        await this.$axios.post(process.env.mailingListUrl, {
           email_address: this.email
         })
         this.$toast.open({

@@ -1,5 +1,3 @@
-const cors = require('cors');
-cors({origin: true});
 import * as functions from 'firebase-functions';
 const Mailchimp = require('mailchimp-api-v3');
 const API_KEY: string = functions.config().mailchimp.key
