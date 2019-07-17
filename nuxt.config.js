@@ -8,8 +8,23 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   }
 } : {}
 
+// Handles production env variables when building (These can be public)
+const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  env: {
+    FIREBASE_API_KEY: 'AIzaSyBppAYPBZ6WxWdErM3smh6t9BEJPUM_NHU',
+    FIREBASE_AUTH_DOMAIN: 'nwhacks-2019-dev.firebaseapp.com',
+    FIREBASE_DATABASE_URL: 'https://nwhacks-2019-dev.firebaseio.com',
+    FIREBASE_PROJECT_ID: 'nwhacks-2019-dev',
+    FIREBASE_STORAGE_BUCKET: 'nwhacks-2019-dev-sponsor-images',
+    FIREBASE_MESSAGING_SENDER_ID: '5043243303',
+    RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
+    WEBSITE_NAME: 'NwPlus_2020'
+  }
+} : {}
+
 export default {
   ...routerBase,
+  ...envVars,
   mode: 'spa',
   /*
    ** Headers of the page
