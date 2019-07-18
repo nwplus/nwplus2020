@@ -7,7 +7,7 @@ install:
 jobs:
   include:
     - stage: "Lint and Test Functions"
-      script: cd functions/; npm run build && npm run lint
+      script: cd functions/; npm install && npm run build && npm run lint
     - stage: "Lint and Test Web"
       name: "Lint"
       script: yarn lint
