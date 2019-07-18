@@ -1,4 +1,6 @@
 import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin'
+admin.initializeApp()
 const Mailchimp = require('mailchimp-api-v3');
 const API_KEY: string = functions.config().mailchimp.key
 const mailchimp = new Mailchimp(API_KEY)
@@ -44,3 +46,18 @@ export const SubscribeToMailingList = functions.https.onRequest(async (request, 
         return
     }
 });
+const updateAdminIDs = async () => {
+    const db = admin.firestore()
+    const admins = await db.collection('admins').get()
+    const adminIDs = admins.docs.map((doc) => doc.id)
+    adminIDs.forEach(async (id) => {
+        await admin.auth().setCustomUserClaims(id, {admin: true})
+    })
+}
+export const updateAdmins = functions.https.onRequest( async (request, response) => {
+    await updateAdminIDs()
+    response.send(200)
+})
+export const updateAdminsOnAdd = functions.firestore.document('admins/*').onCreate(async (change, context) => {
+    await updateAdminIDs()
+})
