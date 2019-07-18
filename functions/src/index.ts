@@ -7,7 +7,7 @@ const mailchimp = new Mailchimp(API_KEY)
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //
-export const SubscribeToMailingList = functions.https.onRequest(async (request, response) => {
+export const subscribeToMailingList = functions.https.onRequest(async (request, response) => {
     response.set('Access-Control-Allow-Origin', '*');
     response.set('Access-Control-Allow-Headers', 'Content-Type, crossDomain');
     if (request.body.email_address == '') {
