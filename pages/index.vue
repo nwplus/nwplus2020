@@ -92,7 +92,7 @@ export default {
   align-items: center;
   text-align: center;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 
 .title {
