@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-
+import 'firebase/storage'
 if (!firebase.apps.length) {
   const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -13,22 +13,27 @@ if (!firebase.apps.length) {
   firebase.initializeApp(config)
 }
 const db = firebase.firestore()
+const storage = firebase.storage()
 const webCollection = 'Website_content'
 const WebDocument = process.env.WEBSITE_NAME
-const Faq = 'Faq'
 
 const fireDb = {
-  get: async () => {
-    const ref = db.collection(webCollection).doc(WebDocument)
-    const data = await ref.get()
-    return data.data()
-  },
-  getFAQ: async () => {
+  get: async (collection = WebDocument) => {
+    if (collection === WebDocument) {
+      const ref = db.collection(webCollection).doc(WebDocument)
+      const data = await ref.get()
+      return data.data()
+    }
     const ref = db
       .collection(webCollection)
       .doc(WebDocument)
-      .collection(Faq)
+      .collection(collection)
     return (await ref.get()).docs.map(doc => doc.data())
+  },
+  getImageUrl: async (imageref) => {
+    const image = storage.ref(`${WebDocument}/${imageref}`)
+    const url = await image.getDownloadURL()
+    return url
   }
 }
 

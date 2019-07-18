@@ -1,6 +1,6 @@
-# LHD2020
+# nwPlus2020
 
-> The LHD website
+> The nwPlus website
 
 ## Build Setup
 

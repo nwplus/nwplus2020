@@ -4,8 +4,24 @@ notifications:
   email: false
 install:
   - yarn install
-script:
-  - yarn lint
-  - yarn test
-  - yarn run build
-  - yarn run generate
+jobs:
+  include:
+    - stage: "Lint, Test and Build"
+      name: 'Functions'
+      script: cd functions/; npm install && npm run build && npm run lint
+    - script: yarn lint && yarn test && yarn generate
+      name: 'Web'
+    - stage: Deploy
+      script: yarn generate:gh-pages
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep_history: true
+        local_dir: dist
+        on:
+          branch: master
+stages:
+  - "Lint, Test and Build"
+  - name: Deploy
+    if: branch = master
