@@ -1,8 +1,8 @@
 {
   "name": "nwPlus",
   "version": "1.0.0",
-  "description": "The NwPlus Website website",
-  "author": "Nwplus Dev Team",
+  "description": "The nwPlus website",
+  "author": "nwPlus Dev Team",
   "private": true,
   "scripts": {
     "dev": "nuxt",

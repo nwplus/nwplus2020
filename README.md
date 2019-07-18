@@ -1,6 +1,6 @@
-# NwPlus2020
+# nwPlus2020
 
-> The NwPlus website
+> The nwPlus website
 
 ## Build Setup
 
