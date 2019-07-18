@@ -6,5 +6,7 @@ interface Events {
     //Description of this event
     text: string,
     //Title of the event
-    title: string
+    title: string,
+    //Order in which they should appear, smaller numbers
+    order: number
 }
