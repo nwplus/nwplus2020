@@ -54,7 +54,7 @@ const updateAdminIDs = async () => {
         await admin.auth().setCustomUserClaims(id, {admin: true})
     })
 }
-export const UpdateAdmins = functions.https.onRequest( async (request, response) => {
+export const updateAdmins = functions.https.onRequest( async (request, response) => {
     await updateAdminIDs()
     response.send(200)
 })
