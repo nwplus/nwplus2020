@@ -7,5 +7,4 @@ interface Events {
     text: string,
     //Title of the event
     title: string
-
 }
