@@ -6,15 +6,11 @@ install:
   - yarn install
 jobs:
   include:
-    - stage: "Lint and Test Functions"
+    - stage: "Lint, Test and Build"
+      name: 'Functions'
       script: cd functions/; npm install && npm run build && npm run lint
-    - stage: "Lint and Test Web"
-      name: "Lint"
-      script: yarn lint
-    - script: yarn test
-      name: "Test"
-    - stage: Build
-      script: yarn generate
+    - script: yarn lint && yarn test && yarn generate
+      name: 'Web'
     - stage: Deploy
       script: yarn generate:gh-pages
       deploy:
@@ -26,8 +22,6 @@ jobs:
         on:
           branch: master
 stages:
-  - "Lint and Test Functions"
-  - "Lint and Test Web"
-  - "Build"
+  - "Lint, Test and Build"
   - name: Deploy
     if: branch = master

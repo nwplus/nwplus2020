@@ -43,6 +43,8 @@ export default {
     Intro
   },
   asyncData: async () => {
+    const Sponsors = 'Sponsors'
+    const Events = 'Events'
     // functions
     const getSponsorImage = async (sponsor) => {
       sponsor.imageURL = await fireDb.getImageUrl(sponsor.image)
@@ -50,8 +52,8 @@ export default {
     }
     // data
     const data = await fireDb.get()
-    const listOfSponsors = await fireDb.getSponsors()
-    const listOfEvents = await fireDb.getEvents()
+    const listOfSponsors = await fireDb.get(Sponsors)
+    const listOfEvents = await fireDb.get(Events)
     // Populate sponsors with their image urls
     const populatedSponsors = await Promise.all(
       listOfSponsors.map(sponsor => getSponsorImage(sponsor))
