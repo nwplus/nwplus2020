@@ -1,4 +1,4 @@
-# NwPlus2020
+# nwPlus2020
 
 > The nwPlus website
 
