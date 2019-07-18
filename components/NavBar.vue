@@ -73,7 +73,6 @@ export default {
 
 <style scoped>
 .navbar {
-  position: absolute;
   background-color: #4d5682;
   width: 100%;
   padding: 0;
@@ -107,6 +106,7 @@ a.navbar-item:focus-within {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 .navbar-brand {
   align-items: center;
