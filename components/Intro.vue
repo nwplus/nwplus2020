@@ -24,26 +24,40 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
 .text {
   font-size: 32px;
   line-height: 40px;
   color: #0c2264;
   font-family: "Merriweather", serif;
   font-weight: bold;
-  width: 40%;
+  margin-top: 8%;
   margin-left: 8%;
+  width:  48%;
   text-align: left;
-  margin-top: 135px;
-}
+  @include until($desktop) {
+    width: 100%;
+    margin-left: 2%
+  }
+  }
 
-.sub {
+  .sub {
   font-size: 18px;
   line-height: 21px;
   color: #0c2264;
   font-family: "HKConcentrate-Medium";
-  width: 55%;
-  margin:  45px 0 120px 8%;
+  margin: 8% 8%;
+  width: 38%;
   text-align: left;
-}
+  @include until($desktop) {
+    width: 100%;
+    margin-left: 2%
+  }
+  }
+
+  // @media screen and (max-width: mobile) {
+  // margin-left: 0px;
+  // border: 5px solid blue;
+  // }
 </style>

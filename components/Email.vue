@@ -10,7 +10,7 @@
             <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
           </div>
           <div class="level-item">
-            <b-button class="subBtn" @click="submit">
+            <b-button style="color: white;" class="subBtn" @click="submit">
               Subscribe
             </b-button>
           </div>
@@ -72,16 +72,13 @@ export default {
 
 </script>
 
-<style>
-
+<style lang="scss">
+@import "bulma/bulma.sass";
 .emailContainer {
-  padding-top: 50px;
-}
-
-.leftPos {
-  width: 100vw;
-  text-align: left
-  /* Help, can't make it stick to the left */
+  text-align: left;
+  @include until ($desktop) {
+    text-align: center;
+  }
 }
 
 .emailInput {
@@ -102,7 +99,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.subBtn, .subBtn:hover {
+.subBtn {
   background: linear-gradient(180deg, #4DE8C2 0%, #18CDCD 100%, #19CBCB 100%);
   text-align: center;
   color: white;

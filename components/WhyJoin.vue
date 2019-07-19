@@ -51,7 +51,8 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 @font-face {
   font-family: "HKConcentrate-Bold";
@@ -78,11 +79,17 @@ h2 {
   line-height: 40px;
   font-weight: 630;
   margin-bottom: 3%;
+  @include until ($desktop) {
+    text-align: center;
+    width: 100%
+  }
 }
 .spacing {
   margin-left: 5%;
-  width: 87vw;
   color: #0c2264;
+}
+#whyJoin {
+  margin-bottom: 8%;
 }
 .whyjoin img {
   width: 277px;

@@ -71,7 +71,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "bulma/bulma.sass";
 #title {
   font-family: "Merriweather", serif;
   font-weight: bold;
@@ -82,6 +83,10 @@ export default {
   text-align: left;
   margin-left: 8%;
   margin-bottom: 20px;
+  @include until($desktop) {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .mainSection {
@@ -91,7 +96,6 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
   z-index: 0;
 }
 

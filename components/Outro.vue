@@ -1,5 +1,5 @@
 <template>
-  <div class="outro">
+  <div id="outro" class="outro">
     <p>{{ text }}</p>
   </div>
 </template>
@@ -15,11 +15,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
 .outro {
   align-items: center;
   color: #21258A;
   padding-top: 50px;
+  margin-bottom: 8%;
 }
 .outro p {
   margin: auto;
