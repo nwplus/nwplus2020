@@ -1,5 +1,5 @@
 <template>
-  <div style>
+  <div style="padding: 1.5% 8%;">
     <h2>
       Events
     </h2>
@@ -23,6 +23,7 @@
             target="_blank"
           >
             <img
+              class="learnResize"
               src="../static/events/learnMore.png"
               alt="learn more"
             >
@@ -43,16 +44,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
-  @font-face {
+@font-face {
   font-family: "HKConcentrate-Bold";
   src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
-  }
-
-  #events {
-  margin-bottom: 8%;
-  }
+}
 
   h2 {
   width: 30%;
@@ -62,11 +59,8 @@ export default {
   line-height: 40px;
   font-weight: 630;
   margin-bottom: 3%;
-  //  @include until ($desktop) {
-  //  text-align: center;
-  //  width: 100%
-  //  }
   color: #21258A;
+  text-align: left;
   }
 
   .text {
@@ -75,23 +69,32 @@ export default {
   color: #21258A;
   padding-right: 10%;
   padding-left: 7%;
+  text-align: left;
   }
 
   .title {
+  padding-left: 7%;
   padding-top: 8%;
   font-family: "HKConcentrate-Bold";
   font-size: 32px;
   color: #21258A;
   line-height: 37px;
+  text-align: left;
   }
 
   .imgResize {
   min-width: 23em;
   min-height: 23em;
+  max-height: 25em;
+  max-width: 25em;
   object-fit: cover; /* Do not scale the image */
   object-position: 50% 50%; /* Center the image within the element */
   border-radius: 40px;
   padding: 0;
+  }
+
+  .learnResize {
+    width: 15vw;
   }
 
   .white {
@@ -102,7 +105,9 @@ export default {
 
   @media (max-width: 768px) {
   .imgResize {
-  min-width: 100%;
+    min-height: 100vw;
+    padding: 0;
+    margin: auto;
   }
   .white {
   margin-left: 10%;
@@ -114,10 +119,20 @@ export default {
   text-align: center;
   width: 100%
   }
-  .text {
+
+  .title {
+  text-align: center;
   padding: 0;
   }
 
+  .text {
+  text-align: center;
+  padding: 0;
+  }
+
+  .learnResize {
+    width: 10em;
+  }
   }
 
 </style>
