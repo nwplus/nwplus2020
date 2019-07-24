@@ -3,7 +3,7 @@
     <NavBar />
     <section class="mainSection">
       <div>
-        <h1 id="title">
+        <h1 id="nwtitle">
           UBC nwPlus
           <div style="font-size: 30px;">
             Connect, build, discover
@@ -73,7 +73,7 @@ export default {
 
 <style lang="scss">
 @import "bulma/bulma.sass";
-#title {
+#nwtitle {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 48px;
@@ -85,6 +85,7 @@ export default {
   margin-bottom: 20px;
   @include until($desktop) {
     width: 100%;
+    margin-left: 0%;
     text-align: center;
   }
 }
@@ -97,24 +98,10 @@ export default {
   align-items: center;
   text-align: center;
   z-index: 0;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  @include until($desktop) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 .links {

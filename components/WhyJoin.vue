@@ -81,12 +81,16 @@ h2 {
   margin-bottom: 3%;
   @include until ($desktop) {
     text-align: center;
+    left: 0%;
     width: 100%
   }
 }
 .spacing {
   margin-left: 5%;
   color: #0c2264;
+  @include until($desktop) {
+    margin-left: 3%;
+  }
 }
 #whyJoin {
   margin-bottom: 8%;
