@@ -122,4 +122,10 @@ a.navbar-item:focus-within {
 .is-active .buttons .navbar-item {
   color: #4d5682;
 }
+@media (max-width: 768px) {
+  #navbar-logo {
+      height: 30px;
+  }
+
+}
 </style>
