@@ -1,6 +1,7 @@
 <template>
   <div style="position: relative;">
     <img class="backgroundTop" src="../assets/sprite/svg/topBaclground.svg">
+    <img class="sun" src="../assets/sprite/Sun.png">
     <NavBar />
     <section class="mainSection">
       <div>
@@ -10,6 +11,7 @@
             Connect, build, discover
           </div>
         </h1>
+        <img class="topPeople" src="../assets/sprite/topPeople.png">
         <Email />
         <Intro :text="intro" :sub="introSub" />
         <WhyJoin id="whyJoin" />
@@ -82,6 +84,32 @@ html body {
   width: 100vw;
   overflow-x: hidden;
 }
+
+.topPeople {
+  position: absolute;
+  right: 10%;
+  top: 6%;
+  width: 45%;
+  height: auto;
+  z-index: -1;
+  @include until($desktop) {
+    position: static;
+    top: auto;
+    right: auto;
+    width: 60%;
+  }
+}
+
+.sun {
+  position: absolute;
+  top: 2%;
+  right: 10%;
+  z-index: -1;
+  @include until($desktop) {
+    visibility: hidden;
+  }
+}
+
 .backgroundBottom {
   height: 75%;
   width: auto;
@@ -103,8 +131,6 @@ html body {
   position: absolute;
   left: 0%;
   z-index: -1;
-  @include until($desktop) {
-  }
 }
 #nwtitle {
   font-family: "Merriweather", serif;
