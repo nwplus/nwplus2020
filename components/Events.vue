@@ -109,7 +109,7 @@ export default {
   @media (max-width: 768px) {
   .imgResize {
     min-height: 100vw;
-    max-width: 80%;
+    max-width: 100%;
     padding: 0;
     margin: auto;
   }
