@@ -1,9 +1,6 @@
 <template>
   <div style="position: relative;">
-    <img
-      class="backgroundTop"
-      src="../assets/sprite/svg/topBaclground.svg"
-    >
+    <img class="backgroundTop" src="../assets/sprite/svg/topBaclground.svg">
     <NavBar />
     <section class="mainSection">
       <div>
@@ -23,9 +20,7 @@
     </section>
     <Footer id="contact" :text="footer" />
     <div class="backgroundBottom">
-      <img
-        src="../assets/sprite/svg/backgroundBottom.png"
-      >
+      <img src="../assets/sprite/svg/backgroundBottom.png">
     </div>
   </div>
 </template>
@@ -83,6 +78,10 @@ export default {
 <style lang="scss">
 @import "bulma/bulma.sass";
 
+html body {
+  width: 100vw;
+  overflow-x: hidden;
+}
 .backgroundBottom {
   height: 75%;
   width: auto;
@@ -113,7 +112,7 @@ export default {
   font-size: 48px;
   line-height: 60px;
   margin-top: 20%;
-  color: #0C2264;
+  color: #0c2264;
   text-align: left;
   margin-left: 8%;
   margin-bottom: 20px;
