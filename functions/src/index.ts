@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin'
+import * as Parser from 'json2csv'
 admin.initializeApp()
 const Mailchimp = require('mailchimp-api-v3');
 const API_KEY: string = functions.config().mailchimp.key
@@ -60,4 +61,15 @@ export const updateAdmins = functions.https.onRequest( async (request, response)
 })
 export const updateAdminsOnAdd = functions.firestore.document('admins/*').onCreate(async (change, context) => {
     await updateAdminIDs()
+})
+export const ApplicantToCSV = functions.https.onRequest( async (request, response) => {
+    const db = admin.firestore()
+    const hackerReference = db.collection('hacker_short_info')
+    const snapshot = await hackerReference.get()
+    const hackerInfo = snapshot.docs.map((doc) => doc.data())
+    const parser = new Parser.Parser();
+    const csv = parser.parse(hackerInfo);
+    response.attachment('Hackers.csv')
+    response.status(200).send(csv)
+
 })
