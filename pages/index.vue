@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div style="position: relative;">
+    <img
+      class="backgroundTop"
+      src="../assets/sprite/svg/topBaclground.svg"
+    >
     <NavBar />
     <section class="mainSection">
       <div>
@@ -18,6 +22,11 @@
       </div>
     </section>
     <Footer id="contact" :text="footer" />
+    <div class="backgroundBottom">
+      <img
+        src="../assets/sprite/svg/backgroundBottom.png"
+      >
+    </div>
   </div>
 </template>
 
@@ -73,6 +82,31 @@ export default {
 
 <style lang="scss">
 @import "bulma/bulma.sass";
+
+.backgroundBottom {
+  height: 75%;
+  width: auto;
+  position: absolute;
+  left: 0%;
+  bottom: 1%;
+  z-index: -1;
+  @include until($desktop) {
+    height: 90%;
+  }
+}
+.backgroundBottom img {
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundTop {
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  z-index: -1;
+  @include until($desktop) {
+  }
+}
 #nwtitle {
   font-family: "Merriweather", serif;
   font-weight: bold;
