@@ -1,5 +1,5 @@
 <template>
-  <div style="padding: 1.5% 8%;">
+  <div class="mainContainer">
     <h2>
       Events
     </h2>
@@ -51,6 +51,9 @@ export default {
   src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
 }
 
+  .mainContainer {
+    padding: 1.5% 8%;
+  }
   h2 {
   width: 30%;
   left: 10%;
@@ -106,15 +109,13 @@ export default {
   @media (max-width: 768px) {
   .imgResize {
     min-height: 100vw;
+    max-width: 80%;
     padding: 0;
     margin: auto;
   }
-  .white {
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-bottom: 25px;
+  .mainContainer {
+    padding: 0;
   }
-
   h2 {
   text-align: center;
   width: 100%
