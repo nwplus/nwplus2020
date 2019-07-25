@@ -1,5 +1,5 @@
 <template>
-  <div style="padding: 1.5% 8%;">
+  <div class="mainContainer">
     <h2>
       Events
     </h2>
@@ -23,6 +23,7 @@
             target="_blank"
           >
             <img
+              class="learnResize"
               src="../static/events/learnMore.png"
               alt="learn more"
             >
@@ -50,16 +51,20 @@ export default {
   src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
 }
 
-h2 {
-  font-family: "Merriweather", serif;
-  text-align: left;
+  .mainContainer {
+    padding: 1.5% 8%;
+  }
+  h2 {
+  width: 30%;
+  left: 10%;
   height: 45px;
   font-size: 32px;
   line-height: 40px;
   font-weight: 630;
   margin-bottom: 3%;
   color: #21258A;
-}
+  text-align: left;
+  }
 
   .text {
   font-family: "Merriweather", serif;
@@ -67,41 +72,68 @@ h2 {
   color: #21258A;
   padding-right: 10%;
   padding-left: 7%;
-}
+  text-align: left;
+  }
 
-.title {
+  .title {
+  padding-left: 7%;
   padding-top: 8%;
   font-family: "HKConcentrate-Bold";
   font-size: 32px;
   color: #21258A;
   line-height: 37px;
-}
+  text-align: left;
+  }
 
-.imgResize {
+  .imgResize {
   min-width: 23em;
   min-height: 23em;
+  max-height: 25em;
+  max-width: 25em;
   object-fit: cover; /* Do not scale the image */
   object-position: 50% 50%; /* Center the image within the element */
   border-radius: 40px;
   padding: 0;
-}
+  }
 
-.white {
+  .learnResize {
+    width: 15vw;
+  }
+
+  .white {
   background-color: white;
   border-radius: 40px;
   margin-top: 50px;
-}
-
-@media (max-width: 768px) {
-  .imgResize {
-  min-width: 100%;
-}
-  .white {
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 25px;
   }
 
-}
+  @media (max-width: 768px) {
+  .imgResize {
+    min-height: 100vw;
+    max-width: 100%;
+    padding: 0;
+    margin: auto;
+  }
+  .mainContainer {
+    padding: 0;
+  }
+  h2 {
+  text-align: center;
+  width: 100%
+  }
+
+  .title {
+  text-align: center;
+  padding: 0;
+  }
+
+  .text {
+  text-align: center;
+  padding: 0;
+  }
+
+  .learnResize {
+    width: 10em;
+  }
+  }
 
 </style>

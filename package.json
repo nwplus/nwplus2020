@@ -12,7 +12,8 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "mobile": "cross-env NUXT_HOST=0.0.0.0 yarn dev"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
@@ -44,7 +45,9 @@
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "jest": "^24.1.0",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
+    "sass-loader": "^7.1.0",
     "vue-jest": "^3.0.3"
   }
 }
