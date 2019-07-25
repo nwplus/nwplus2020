@@ -73,7 +73,7 @@
     left: 0;
     top: -5%;
     transform: translate(0, -21vw);
-  z-index: -10;
+  z-index: -1;
   width: 100% !important;
   max-width: 100% !important;
 }
