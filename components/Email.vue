@@ -7,7 +7,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item">
-            <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
+            <b-input v-model="email" class="emailInput" placeholder="hacker@nwplus.io" type="email" />
           </div>
           <div class="level-item">
             <b-button style="color: white;" class="subBtn" @click="submit">
