@@ -1,9 +1,11 @@
 <template>
   <div class="whyjoin">
-    <!-- <img
-      class="backgroundRiver"
-      src="../static/cRiver.png"
-    > -->
+    <div class="backgroundRiverContainer">
+      <img
+        id="backgroundRiver"
+        src="../static/cRiver.png"
+      >
+    </div>
     <div class="spacing">
       <h2>
         Why join nwPlus?
@@ -62,14 +64,24 @@
   font-family: "HKConcentrate-Medium";
   src: url("../assets/fonts/HKConcentrate-Medium.woff") format("woff");
 }
-/* .backgroundRiver {
-  position: absolute;
+.backgroundRiverContainer {
+    position: relative;
+    width: 100vw;
+}
+#backgroundRiver {
+    position: absolute;
+    left: 0;
+    top: -5%;
+    transform: translate(0, -21vw);
   z-index: -10;
-  width: 100%;
-  left: 0;
-  height: 1124px;
-  top: 18vh;
-} */
+  width: 100% !important;
+  max-width: 100% !important;
+}
+@media only screen and (max-width: 768px) {
+    .backgroundRiverContainer {
+        display: none;
+    }
+}
 h2 {
   font-family: "Merriweather", serif;
   width: 30%;
