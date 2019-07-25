@@ -9,7 +9,7 @@
       <img class="right-fg" src="../static/footer/right-fg.png">
       <img class="right-bg" src="../static/footer/right-bg.png">
     </div>
-    <div class="footer">
+    <div class="footerT">
       <a href="https://www.facebook.com/nwplusubc/">
         <svg-icon name="fb" /></a>
       <a href="https://www.instagram.com/nwplusubc/">
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style>
-.footer {
+.footerT {
   background-color: #3D3947;
   padding: 100px 0 100px 0;
   color: white;
@@ -45,12 +45,12 @@ export default {
   z-index: 0;
 }
 
-.footer p {
+.footerT p {
   margin-top: 40px;
   margin-bottom: 0;
 }
 
-.footer svg {
+.footerT svg {
   height: 30px;
   width: 90px;
 }

@@ -73,7 +73,7 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #4d5682;
+  background-color: #94d3fc;
   width: 100%;
   padding: 0;
 }
@@ -118,8 +118,14 @@ a.navbar-item:focus-within {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 0;
 }
 .is-active .buttons .navbar-item {
   color: #4d5682;
+}
+@media (max-width: 768px) {
+  #navbar-logo {
+    height: 30px;
+  }
 }
 </style>
