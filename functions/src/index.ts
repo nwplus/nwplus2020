@@ -1,5 +1,7 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin'
+import * as corsModule from "cors";
+const cors = corsModule({origin: true})
 //import * as Parser from 'json2csv'
 admin.initializeApp()
 const Mailchimp = require('mailchimp-api-v3');
@@ -9,9 +11,8 @@ const mailchimp = new Mailchimp(API_KEY)
 // // https://firebase.google.com/docs/functions/typescript
 //
 export const subscribeToMailingList = functions.https.onRequest(async (request, response) => {
-    response.set('Access-Control-Allow-Origin', '*');
-    response.set('Access-Control-Allow-Headers', 'Content-Type, crossDomain');
-    if (request.body.email_address == '') {
+    return cors(request, response, async () => {
+        if (request.body.email_address == '') {
             response.sendStatus(400)
             return
         }
@@ -48,6 +49,7 @@ export const subscribeToMailingList = functions.https.onRequest(async (request, 
         response.sendStatus(500)
         return
     }
+    })
 });
 const updateAdminIDs = async () => {
     const db = admin.firestore()
