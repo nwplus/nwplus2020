@@ -123,7 +123,7 @@ html body {
 
 .backgroundBottom {
   height: 75%;
-  width: auto;
+  width: 100%;
   position: absolute;
   left: 0%;
   bottom: 1%;
