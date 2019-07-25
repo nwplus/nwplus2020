@@ -9,7 +9,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 } : {}
 
 // Handles production env variables when building (These can be public)
-const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV === 'PRODUCTION' ? {
   env: {
     FIREBASE_API_KEY: 'AIzaSyCBkQHeikIsiYZ2yOHiqH_mGJKDWMDU500',
     FIREBASE_AUTH_DOMAIN: 'nwhacks-2019.firebaseapp.com',

@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "generate:prod": "cross-env DEPLOY_ENV=PRODUCTION nuxt generate",
     "mobile": "cross-env NUXT_HOST=0.0.0.0 yarn dev"
   },
   "dependencies": {
