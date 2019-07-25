@@ -34,7 +34,7 @@ export default {
   font-weight: bold;
   margin-top: 8%;
   margin-left: 8%;
-  width:  48%;
+  width:  52%;
   text-align: left;
   @include until($desktop) {
     width: 100%;
@@ -47,8 +47,10 @@ export default {
   line-height: 21px;
   color: #0c2264;
   font-family: "HKConcentrate-Medium";
-  margin: 8% 8%;
-  width: 38%;
+  margin: 8%;
+  margin-top: 5%;
+  margin-bottom: 8%;
+  width: 55%;
   text-align: left;
   @include until($desktop) {
     width: 100%;
