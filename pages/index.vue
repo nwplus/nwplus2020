@@ -13,7 +13,9 @@
         </h1>
         <img class="topPeople" src="../assets/sprite/topPeople.png">
         <Email />
+        <img class="squTree" src="../static/backgroundSvg/squTree.svg">
         <Intro :text="intro" :sub="introSub" />
+        <img class="blueRiver" src="../static/cRiver.png">
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Outro :text="outro" />
@@ -85,6 +87,30 @@ html body {
   overflow-x: hidden;
 }
 
+.blueRiver {
+  position: absolute;
+  z-index: -1;
+  top: 23.25%;
+  left: 0;
+  @include until($desktop) {
+    position: absolute;
+    top: 10%;
+    right: auto;
+    width: 100%;
+    height: 50%;
+  }
+}
+
+.squTree {
+  position: absolute;
+  z-index: -1;
+  top: 15%;
+  left: 70%;
+  @include until($desktop) {
+    visibility: hidden;
+  }
+}
+
 .topPeople {
   position: absolute;
   right: 10%;
@@ -116,7 +142,7 @@ html body {
   position: absolute;
   left: 0%;
   bottom: 1%;
-  z-index: -1;
+  z-index: -2;
   @include until($desktop) {
     height: 90%;
   }
