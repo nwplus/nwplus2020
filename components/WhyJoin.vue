@@ -1,9 +1,11 @@
 <template>
   <div class="whyjoin">
-    <!-- <img
-      class="backgroundRiver"
-      src="../static/cRiver.png"
-    > -->
+    <div class="backgroundRiverContainer">
+      <img
+        id="backgroundRiver"
+        src="../static/cRiver.png"
+      >
+    </div>
     <div class="spacing">
       <h2>
         Why join nwPlus?
@@ -51,7 +53,8 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 @font-face {
   font-family: "HKConcentrate-Bold";
@@ -61,14 +64,24 @@
   font-family: "HKConcentrate-Medium";
   src: url("../assets/fonts/HKConcentrate-Medium.woff") format("woff");
 }
-/* .backgroundRiver {
-  position: absolute;
+.backgroundRiverContainer {
+    position: relative;
+    width: 100vw;
+}
+#backgroundRiver {
+    position: absolute;
+    left: 0;
+    top: -5%;
+    transform: translate(0, -21vw);
   z-index: -10;
-  width: 100%;
-  left: 0;
-  height: 1124px;
-  top: 18vh;
-} */
+  width: 100% !important;
+  max-width: 100% !important;
+}
+@media only screen and (max-width: 768px) {
+    .backgroundRiverContainer {
+        display: none;
+    }
+}
 h2 {
   font-family: "Merriweather", serif;
   width: 30%;
@@ -78,11 +91,21 @@ h2 {
   line-height: 40px;
   font-weight: 630;
   margin-bottom: 3%;
+  @include until ($desktop) {
+    text-align: center;
+    left: 0%;
+    width: 100%
+  }
 }
 .spacing {
   margin-left: 5%;
-  width: 87vw;
   color: #0c2264;
+  @include until($desktop) {
+    margin-left: 3%;
+  }
+}
+#whyJoin {
+  margin-bottom: 8%;
 }
 .whyjoin img {
   width: 277px;

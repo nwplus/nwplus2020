@@ -1,15 +1,19 @@
 <template>
-  <div>
+  <div style="position: relative;">
+    <img class="backgroundTop" src="../assets/sprite/svg/topBaclground.svg">
+    <img class="sun" src="../assets/sprite/Sun.png">
     <NavBar />
     <section class="mainSection">
       <div>
-        <h1 id="title">
+        <h1 id="nwtitle">
           UBC nwPlus
           <div style="font-size: 30px;">
             Connect, build, discover
           </div>
         </h1>
+        <img class="topPeople" src="../assets/sprite/topPeople.png">
         <Email />
+        <img class="squTree" src="../static/backgroundSvg/squTree.svg">
         <Intro :text="intro" :sub="introSub" />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
@@ -18,6 +22,9 @@
       </div>
     </section>
     <Footer id="contact" :text="footer" />
+    <div class="backgroundBottom">
+      <img src="../assets/sprite/svg/backgroundBottom.png">
+    </div>
   </div>
 </template>
 
@@ -71,17 +78,86 @@ export default {
 }
 </script>
 
-<style>
-#title {
+<style lang="scss">
+@import "bulma/bulma.sass";
+
+html body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.squTree {
+  position: absolute;
+  z-index: -1;
+  top: 15%;
+  right: 0.2%;
+  @include until($desktop) {
+    visibility: hidden;
+  }
+}
+
+.topPeople {
+  position: absolute;
+  right: 10%;
+  top: 6%;
+  width: 45%;
+  height: auto;
+  z-index: -1;
+  @include until($desktop) {
+    position: static;
+    top: auto;
+    right: auto;
+    width: 60%;
+  }
+}
+
+.sun {
+  position: absolute;
+  top: 2%;
+  right: 10%;
+  z-index: -1;
+  @include until($desktop) {
+    visibility: hidden;
+  }
+}
+
+.backgroundBottom {
+  height: 75%;
+  width: auto;
+  position: absolute;
+  left: 0%;
+  bottom: 1%;
+  z-index: -2;
+  @include until($desktop) {
+    height: 90%;
+  }
+}
+.backgroundBottom img {
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundTop {
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  z-index: -1;
+}
+#nwtitle {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 48px;
   line-height: 60px;
   margin-top: 20%;
-  color: #0C2264;
+  color: #0c2264;
   text-align: left;
   margin-left: 8%;
   margin-bottom: 20px;
+  @include until($desktop) {
+    width: 100%;
+    margin-left: 0%;
+    text-align: center;
+  }
 }
 
 .mainSection {
@@ -91,26 +167,11 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
   z-index: 0;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  @include until($desktop) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 .links {
