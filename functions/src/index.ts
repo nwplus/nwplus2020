@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin'
-import * as Parser from 'json2csv'
+//import * as Parser from 'json2csv'
 admin.initializeApp()
 const Mailchimp = require('mailchimp-api-v3');
 const API_KEY: string = functions.config().mailchimp.key
