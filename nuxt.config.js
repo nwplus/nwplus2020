@@ -22,7 +22,9 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV 
     mailingListUrl: '/firebase/subscribeToMailingList'
   }
 } : {
-  mailingListUrl: '/local/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+  env: {
+    mailingListUrl: '/local/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+  }
 }
 
 export default {
@@ -51,8 +53,18 @@ export default {
     proxy: true // Can be also an object with default options
   },
   proxy: {
-    '/firebase/': 'https://us-central1-nwhacks-2019.cloudfunctions.net/',
-    '/local/': 'http://localhost:5000/'
+    '/firebase/': {
+      target: 'https://us-central1-nwhacks-2019.cloudfunctions.net',
+      pathRewrite: {
+        '^/firebase/': '/'
+      }
+    },
+    '/local/': {
+      target: 'http://localhost:5000',
+      pathRewrite: {
+        '^/local/': '/'
+      }
+    }
   },
   /*
    ** Global CSS
@@ -70,6 +82,7 @@ export default {
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/svg-sprite',
     'nuxt-buefy',
     [
