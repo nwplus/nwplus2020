@@ -90,7 +90,7 @@ html body {
   position: absolute;
   z-index: -1;
   top: 15%;
-  left: 70%;
+  right: 0.2%;
   @include until($desktop) {
     visibility: hidden;
   }
