@@ -19,10 +19,10 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV 
     FIREBASE_MESSAGING_SENDER_ID: '98283589440',
     RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
     WEBSITE_NAME: 'NwPlus_2020',
-    mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
+    mailingListUrl: '/firebase/subscribeToMailingList'
   }
 } : {
-  mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+  mailingListUrl: '/local/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
 }
 
 export default {
@@ -47,6 +47,13 @@ export default {
    */
   loading: { color: '#fff' },
 
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+  proxy: {
+    '/firebase/': 'https://us-central1-nwhacks-2019.cloudfunctions.net/',
+    '/local/': 'http://localhost:5000/'
+  },
   /*
    ** Global CSS
    */
