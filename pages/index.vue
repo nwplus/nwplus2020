@@ -60,10 +60,7 @@ export default {
     // data
     const data = await fireDb.get()
     const listOfSponsors = await fireDb.get(Sponsors)
-    const unsortedEvents = await fireDb.get(Events)
-    const listOfEvents = unsortedEvents.sort((a, b) => {
-      return b.order - a.order
-    })
+    const listOfEvents = await fireDb.get(Events)
     // Populate sponsors with their image urls
     const populatedSponsors = await Promise.all(
       listOfSponsors.map(sponsor => getSponsorImage(sponsor))

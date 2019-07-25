@@ -4,8 +4,8 @@
       Events
     </h2>
     <div
-      v-for="item in items"
-      :key="item.title"
+      v-for="item in sortedEvents"
+      :key="item.order"
     >
       <div class="columns white">
         <img class="column imgResize" :src="item.imageLink">
@@ -35,11 +35,17 @@
 </template>
 
 <script>
+import orderBy from 'lodash.orderby'
 export default {
   props: { items: {
     type: Array,
     required: true
   }
+  },
+  computed: {
+    sortedEvents: function () {
+      return orderBy(this.items, 'order')
+    }
   }
 }
 </script>
