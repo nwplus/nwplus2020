@@ -33,6 +33,7 @@ export const subscribeToMailingList = functions.https.onRequest(async (request, 
                 response.status(502).send({errors: error})
                 return
             }else {
+                console.log(reply.errors)
                 response.status(502).send({errors: 'Unexpected Mailchimp error'})
                 return
             }
@@ -43,6 +44,7 @@ export const subscribeToMailingList = functions.https.onRequest(async (request, 
 
     }catch (e){
         console.log("Server error")
+        console.log(e)
         response.sendStatus(500)
         return
     }
@@ -62,14 +64,13 @@ export const updateAdmins = functions.https.onRequest( async (request, response)
 export const updateAdminsOnAdd = functions.firestore.document('admins/*').onCreate(async (change, context) => {
     await updateAdminIDs()
 })
-export const ApplicantToCSV = functions.https.onRequest( async (request, response) => {
-    const db = admin.firestore()
-    const hackerReference = db.collection('hacker_short_info')
-    const snapshot = await hackerReference.get()
-    const hackerInfo = snapshot.docs.map((doc) => doc.data())
-    const parser = new Parser.Parser();
-    const csv = parser.parse(hackerInfo);
-    response.attachment('Hackers.csv')
-    response.status(200).send(csv)
-
-})
+// export const ApplicantToCSV = functions.https.onRequest( async (request, response) => {
+//     const db = admin.firestore()
+//     const hackerReference = db.collection('hacker_short_info')
+//     const snapshot = await hackerReference.get()
+//     const hackerInfo = snapshot.docs.map((doc) => doc.data())
+//     const parser = new Parser.Parser();
+//     const csv = parser.parse(hackerInfo);
+//     response.attachment('Hackers.csv')
+//     response.status(200).send(csv)
+// })
