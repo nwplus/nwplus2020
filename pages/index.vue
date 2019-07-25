@@ -15,7 +15,6 @@
         <Email />
         <img class="squTree" src="../static/backgroundSvg/squTree.svg">
         <Intro :text="intro" :sub="introSub" />
-        <img class="blueRiver" src="../static/cRiver.png">
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Outro :text="outro" />
@@ -85,20 +84,6 @@ export default {
 html body {
   width: 100vw;
   overflow-x: hidden;
-}
-
-.blueRiver {
-  position: absolute;
-  z-index: -1;
-  top: 23.25%;
-  left: 0;
-  @include until($desktop) {
-    position: absolute;
-    top: 10%;
-    right: auto;
-    width: 100%;
-    height: 50%;
-  }
 }
 
 .squTree {
