@@ -1,45 +1,50 @@
 <template>
   <div>
-    <section class="container">
+    <NavBar />
+    <section class="mainSection">
       <div>
-        <logo />
-        <welcome :info="info" />
-        <h1 class="title">
-          nwPlus 2020
+        <h1 id="title">
+          UBC nwPlus
+          <div style="font-size: 30px;">
+            Connect, build, discover
+          </div>
         </h1>
-        <WhyJoin />
-        <Events :items="events" />
-        <Faq :items="items" />
+        <Email />
+        <Intro :text="intro" :sub="introSub" />
+        <WhyJoin id="whyJoin" />
+        <Events id="events" :items="events" />
         <Outro :text="outro" />
         <Sponsors :items="Sponsors" />
       </div>
     </section>
-    <Footer :text="footer" />
+    <Footer id="contact" :text="footer" />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import Welcome from '~/components/Welcome.vue'
-import Faq from '~/components/Faq.vue'
+import NavBar from '~/components/NavBar.vue'
 import Sponsors from '~/components/Sponsors.vue'
 import WhyJoin from '~/components/WhyJoin.vue'
 import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
+import Email from '~/components/Email.vue'
 import Events from '~/components/Events.vue'
+import Intro from '~/components/Intro.vue'
 export default {
   components: {
-    Logo,
-    Welcome,
-    Faq,
+    NavBar,
     WhyJoin,
     Outro,
     Footer,
     Sponsors,
-    Events
+    Events,
+    Email,
+    Intro
   },
   asyncData: async () => {
+    const Sponsors = 'Sponsors'
+    const Events = 'Events'
     // functions
     const getSponsorImage = async (sponsor) => {
       sponsor.imageURL = await fireDb.getImageUrl(sponsor.image)
@@ -47,31 +52,47 @@ export default {
     }
     // data
     const data = await fireDb.get()
-    const listOfFaq = await fireDb.getFAQ()
-    const listOfSponsors = await fireDb.getSponsors()
-    const listOfEvents = await fireDb.getEvents()
+    const listOfSponsors = await fireDb.get(Sponsors)
+    const listOfEvents = await fireDb.get(Events)
     // Populate sponsors with their image urls
-    const populatedSponsors = await Promise.all(listOfSponsors.map(sponsor => getSponsorImage(sponsor)))
+    const populatedSponsors = await Promise.all(
+      listOfSponsors.map(sponsor => getSponsorImage(sponsor))
+    )
     return {
       info: data.WelcomeText,
-      items: listOfFaq,
       Sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText,
-      events: listOfEvents
+      events: listOfEvents,
+      intro: data.IntroText,
+      introSub: data.IntroSubtext
     }
   }
 }
 </script>
 
 <style>
-.container {
+#title {
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 60px;
+  margin-top: 20%;
+  color: #0C2264;
+  text-align: left;
+  margin-left: 8%;
+  margin-bottom: 20px;
+}
+
+.mainSection {
   margin: 0 auto;
   /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 0;
 }
 
 .title {

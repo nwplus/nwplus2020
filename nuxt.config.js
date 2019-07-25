@@ -1,11 +1,37 @@
 import pkg from './package'
 
-export default {
-  mode: 'spa',
+// handles router base depending on if its running in pages or on local
+// REMOVE THIS WHEN THE DOMAIN HAS BEEN SWITCHEd TO NWPLUS.IO!!!!!!!!!!!!
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nwplus2020/'
+  }
+} : {}
 
+// Handles production env variables when building (These can be public)
+const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  env: {
+    FIREBASE_API_KEY: 'AIzaSyCBkQHeikIsiYZ2yOHiqH_mGJKDWMDU500',
+    FIREBASE_AUTH_DOMAIN: 'nwhacks-2019.firebaseapp.com',
+    FIREBASE_DATABASE_URL: 'https://nwhacks-2019.firebaseio.com',
+    FIREBASE_PROJECT_ID: 'nwhacks-2019',
+    FIREBASE_STORAGE_BUCKET: 'nwhacks-2019',
+    FIREBASE_MESSAGING_SENDER_ID: '98283589440',
+    RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
+    WEBSITE_NAME: 'NwPlus_2020',
+    mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
+  }
+} : {
+  mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+}
+
+export default {
+  ...routerBase,
+  ...envVars,
+  mode: 'spa',
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: pkg.name,
     meta: [
@@ -13,46 +39,47 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#fff' },
 
   /*
-  ** Global CSS
-  */
-  css: [
-  ],
+   ** Global CSS
+   */
+  css: [],
 
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    '~/plugins/firebase.js'
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: ['~/plugins/firebase.js', '~plugins/vue-scrollto.js'],
 
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
     '@nuxtjs/svg-sprite',
     'nuxt-buefy',
-    ['nuxt-buefy', { /* buefy options */ }]
+    [
+      'nuxt-buefy',
+      {
+        /* buefy options */
+      }
+    ]
   ],
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
@@ -60,7 +87,10 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }
