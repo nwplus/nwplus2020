@@ -1,10 +1,10 @@
 <template>
   <div class="whyjoin">
-      <div class="backgroundRiverContainer">
-        <img
+    <div class="backgroundRiverContainer">
+      <img
         id="backgroundRiver"
         src="../static/cRiver.png"
-        >
+      >
     </div>
     <div class="spacing">
       <h2>
@@ -64,14 +64,22 @@
   src: url("../assets/fonts/HKConcentrate-Medium.woff") format("woff");
 }
 .backgroundRiverContainer {
+    position: relative;
     width: 100vw;
 }
 #backgroundRiver {
     position: absolute;
     left: 0;
-    top: 5%;
+    top: -5%;
+    transform: translate(0, -21vw);
   z-index: -10;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+@media only screen and (max-width: 768px) {
+    .backgroundRiverContainer {
+        display: none;
+    }
 }
 h2 {
   font-family: "Merriweather", serif;
