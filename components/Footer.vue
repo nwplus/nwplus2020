@@ -65,7 +65,7 @@ export default {
 .left-bg {
   position: relative;
   margin-left: -300px;
-  z-index: -10;
+  z-index: 0;
   width: auto;
 }
 
@@ -85,7 +85,7 @@ export default {
   position: relative;
   margin-right: -60px;
   float: right;
-  z-index: -10;
+  z-index: 0;
   width: auto;
 }
 
