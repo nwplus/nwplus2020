@@ -97,7 +97,7 @@ export default {
   width: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .left-fg {
     margin-bottom: -100px;
   }
@@ -150,6 +150,13 @@ export default {
   }
   .bottom img {
     height: 150px;
+  }
+}
+
+@media (max-width: 350px) {
+  .footerT svg {
+    height: 20px;
+    width: 50px;
   }
 }
 </style>
