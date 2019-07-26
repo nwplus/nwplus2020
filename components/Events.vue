@@ -18,16 +18,7 @@
             {{ item.text }}
           </p>
           <br>
-          <a
-            :href="item.learnMoreLink"
-            target="_blank"
-          >
-            <img
-              class="learnResize"
-              src="../static/events/learnMore.png"
-              alt="learn more"
-            >
-          </a>
+          <a :href="item.learnMoreLink" target="_blank" class="button is-primary is-outlined">Learn More</a>
         </div>
       </div>
     </div>
