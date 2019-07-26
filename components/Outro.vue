@@ -28,5 +28,13 @@ export default {
   max-width: 670px;
   text-align: left;
   font-family: "HKConcentrate-Medium";
+  @include until($desktop) {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+  }
+  @media (max-width: 350px) {
+    width: 95%;
+  }
 }
 </style>

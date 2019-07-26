@@ -38,7 +38,12 @@ export default {
   text-align: left;
   @include until($desktop) {
     width: 100%;
-    margin-left: 2%
+    margin: 6% auto;
+    margin-top: 10%;
+    text-align: center;
+  }
+  @media (max-width: 350px) {
+    width: 90%;
   }
   }
 
@@ -54,7 +59,12 @@ export default {
   text-align: left;
   @include until($desktop) {
     width: 100%;
-    margin-left: 2%
+    margin: auto;
+    margin-bottom: 8%;
+    text-align: center;
+  }
+  @media (max-width: 350px) {
+    width: 92%;
   }
   }
 

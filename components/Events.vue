@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 @font-face {
   font-family: "HKConcentrate-Bold";
@@ -59,6 +59,14 @@ export default {
 
   .mainContainer {
     padding: 1.5% 8%;
+    @media (max-width: 900px) {
+      width: 96%;
+      margin: auto;
+    }
+    @media (max-width: 350px) {
+      width: 90%;
+      margin: auto;
+    }
   }
   h2 {
   width: 30%;
@@ -92,8 +100,6 @@ export default {
   }
 
   .imgResize {
-  min-width: 23em;
-  min-height: 23em;
   max-height: 25em;
   max-width: 25em;
   object-fit: cover; /* Do not scale the image */

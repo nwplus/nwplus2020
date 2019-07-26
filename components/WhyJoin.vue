@@ -12,7 +12,7 @@
       </h2>
       <br>
       <div class="columns">
-        <div id="cConnect" class="column">
+        <div id="cConnect" class="column no-margin">
           <div>
             <img src="../static/cConnect.png">
             <br><br>
@@ -24,7 +24,7 @@
             </p>
           </div>
         </div>
-        <div id="cBuild" class="column">
+        <div id="cBuild" class="column no-margin">
           <div>
             <img src="../static/cBuild.png">
             <br><br>
@@ -36,7 +36,7 @@
             </p>
           </div>
         </div>
-        <div id="cDiscover" class="column">
+        <div id="cDiscover" class="column no-margin">
           <div>
             <img src="../static/cDiscover.png">
             <br><br>
@@ -82,6 +82,9 @@
         display: none;
     }
 }
+.no-margin {
+  padding: 0;
+}
 h2 {
   font-family: "Merriweather", serif;
   width: 30%;
@@ -101,7 +104,7 @@ h2 {
   margin-left: 5%;
   color: #0c2264;
   @include until($desktop) {
-    margin-left: 3%;
+    margin: auto;
   }
 }
 #whyJoin {
@@ -123,5 +126,10 @@ h2 {
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  @include until ($desktop) {
+    width: 90%;
+    padding: 5% 0%;
+    margin: auto;
+  }
 }
 </style>

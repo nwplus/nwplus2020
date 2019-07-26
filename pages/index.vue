@@ -169,8 +169,8 @@ html body {
   text-align: center;
   z-index: 0;
   @include until($desktop) {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: auto 3%;
+    width: auto;
   }
 }
 
