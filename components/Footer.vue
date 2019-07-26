@@ -11,13 +11,13 @@
     </div>
     <div class="footerT">
       <a href="https://www.facebook.com/nwplusubc/">
-        <svg-icon name="fb" /></a>
+        <svg-icon name="fb" class="icon-animation" /></a>
       <a href="https://www.instagram.com/nwplusubc/">
-        <svg-icon name="insta" /></a>
+        <svg-icon name="insta" class="icon-animation" /></a>
       <a href="https://medium.com/nwplusubc">
-        <svg-icon name="medium" /></a>
+        <svg-icon name="medium" class="icon-animation" /></a>
       <a href="https://twitter.com/nwPlusubc">
-        <svg-icon name="twitter" /></a>
+        <svg-icon name="twitter" class="icon-animation" /></a>
       <p> {{ text }} </p>
     </div>
   </div>
@@ -159,5 +159,25 @@ export default {
     height: 20px;
     width: 50px;
   }
+}
+
+.icon-animation:hover {
+    animation: pop-up 2s linear 0s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-6px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
 }
 </style>
