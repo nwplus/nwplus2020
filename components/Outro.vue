@@ -25,8 +25,9 @@ export default {
 }
 .outro p {
   margin: auto;
-  max-width: 670px;
-  text-align: left;
+  font-size: 24px;
+  max-width: 80%;
+  text-align: center;
   font-family: "HKConcentrate-Medium";
   @include until($desktop) {
     text-align: center;
