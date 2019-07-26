@@ -65,6 +65,7 @@ export default {
 .left-bg {
   position: relative;
   margin-left: -300px;
+  top: 20px;
   z-index: 0;
   width: auto;
 }
