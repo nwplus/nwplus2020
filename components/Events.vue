@@ -64,7 +64,7 @@ export default {
       margin: auto;
     }
     @media (max-width: 350px) {
-      width: 90%;
+      width: 78%;
       margin: auto;
     }
   }

@@ -131,5 +131,8 @@ h2 {
     padding: 5% 0%;
     margin: auto;
   }
+  @media (max-width: 350px) {
+    width: 82%;
+  }
 }
 </style>

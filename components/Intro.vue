@@ -43,7 +43,7 @@ export default {
     text-align: center;
   }
   @media (max-width: 350px) {
-    width: 90%;
+    width: 82%;
   }
   }
 
@@ -64,7 +64,7 @@ export default {
     text-align: center;
   }
   @media (max-width: 350px) {
-    width: 92%;
+    width: 82%;
   }
   }
 

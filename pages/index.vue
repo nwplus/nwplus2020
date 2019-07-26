@@ -159,6 +159,11 @@ html body {
     margin-left: 0%;
     text-align: center;
   }
+  @media (max-width: 350px) {
+    margin: auto;
+    margin-top: 20%;
+    width: 82%;
+  }
 }
 
 .mainSection {
