@@ -31,6 +31,7 @@ export default {
   font-family: "HKConcentrate-Medium";
   @include until($desktop) {
     text-align: center;
+    font-size: 18px;
     width: 100%;
     margin: auto;
   }
