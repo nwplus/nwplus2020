@@ -30,7 +30,7 @@ export default {
   font-size: 32px;
   line-height: 40px;
   color: #0c2264;
-  font-family: "Merriweather", serif;
+  font-family: "HKConcentrate-Medium";
   font-weight: bold;
   margin-top: 8%;
   margin-left: 8%;
@@ -51,7 +51,7 @@ export default {
   font-size: 18px;
   line-height: 21px;
   color: #0c2264;
-  font-family: "HKConcentrate-Medium";
+  font-family: "HKConcentrate-Medium", serif;
   margin: 8%;
   margin-top: 5%;
   margin-bottom: 8%;

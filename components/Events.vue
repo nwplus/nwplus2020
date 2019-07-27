@@ -73,6 +73,7 @@ export default {
   left: 10%;
   height: 45px;
   font-size: 32px;
+  font-family: "HKConcentrate-Medium";
   line-height: 40px;
   font-weight: 630;
   margin-bottom: 3%;

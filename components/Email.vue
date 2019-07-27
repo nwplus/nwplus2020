@@ -93,7 +93,7 @@ export default {
 .subscribeText {
   font-size: 18px;
   line-height: 23px;
-  font-family: "HKConcentrate-Medium";
+  font-family: "HKConcentrate-Medium", serif;
   font-weight: 600;
   color: #21258A;
   margin-bottom: 10px;
