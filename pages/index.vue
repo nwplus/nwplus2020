@@ -18,7 +18,7 @@
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Outro :text="outro" />
-        <Sponsors :items="Sponsors" />
+        <Sponsors v-if="sponsorFlag" :items="Sponsors" />
       </div>
     </section>
     <Footer id="contact" :text="footer" />
@@ -72,7 +72,8 @@ export default {
       footer: data.FooterText,
       events: listOfEvents,
       intro: data.IntroText,
-      introSub: data.IntroSubtext
+      introSub: data.IntroSubtext,
+      ...data.featureFlags
     }
   }
 }
@@ -157,6 +158,11 @@ html body {
     width: 100%;
     margin-left: 0%;
     text-align: center;
+  }
+  @media (max-width: 350px) {
+    margin: auto;
+    margin-top: 20%;
+    width: 82%;
   }
 }
 
