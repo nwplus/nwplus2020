@@ -28,7 +28,6 @@
           <div class="buttons">
             <a v-scroll-to="'#whyJoin'" href="#" class="navbar-item">About</a>
             <a v-scroll-to="'#events'" href="#" class="navbar-item">Events</a>
-            <a href="http://lhd.nwplus.io" class="navbar-item">Local Hack Day</a>
             <a v-scroll-to="'#contact'" href="#" class="navbar-item">Contact us</a>
           </div>
         </div>
