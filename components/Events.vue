@@ -17,7 +17,12 @@
           <p class="text">
             {{ item.text }}
           </p>
-          <br>
+          <p v-if="item.title === 'cmd-f'" class="disclaimer">
+            *The cmd-f team would like to acknowledge that "female" or "women" is not an
+            accurate description for many people and it may make some feel unwelcome.
+            We use * to specifically and intentionally include cis and trans women,
+            as well as non-binary, agender, intersex people.
+          </p>
           <a
             :href="item.learnMoreLink"
             target="_blank"
@@ -55,6 +60,17 @@ export default {
 @font-face {
   font-family: "HKConcentrate-Bold";
   src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
+}
+
+.disclaimer {
+  font-size: 12px;
+  font-style: italic;
+  font-family: "HKConcentrate-Medium", serif;
+  text-align: left;
+  padding: 2% 2%;
+  @media(max-width: 900px) {
+    text-align: center;
+  }
 }
 
   .mainContainer {
