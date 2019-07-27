@@ -145,7 +145,7 @@ html body {
   z-index: -1;
 }
 #nwtitle {
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather";
   font-weight: bold;
   font-size: 48px;
   line-height: 60px;

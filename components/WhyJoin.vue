@@ -86,7 +86,7 @@
   padding: 0;
 }
 h2 {
-  font-family: "Merriweather", serif;
+  font-family: "HKConcentrate-Medium";
   width: 30%;
   left: 10%;
   height: 45px;
@@ -126,6 +126,7 @@ h2 {
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  font-family: "HKConcentrate-Medium", serif;
   @include until ($desktop) {
     width: 90%;
     padding: 5% 0%;
