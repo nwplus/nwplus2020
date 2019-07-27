@@ -30,7 +30,8 @@ export const subscribeToMailingList = functions.https.onRequest(async (request, 
             if (error.indexOf('already a list member') !== -1) {
                 response.status(502).send({errors: 'This email has already signed up'})
                 return
-            }else if (error.indexOf('looks fake or invalid') !== -1) {
+            }else if ((error.indexOf('looks fake or invalid') !== -1)||
+                       (error.indexOf('valid email address') !== -1)) {
                 response.status(502).send({errors: error})
                 return
             }else {
