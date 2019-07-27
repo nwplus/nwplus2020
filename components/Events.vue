@@ -23,16 +23,7 @@
             We use * to specifically and intentionally include cis and trans women,
             as well as non-binary, agender, intersex people.
           </p>
-          <a
-            :href="item.learnMoreLink"
-            target="_blank"
-          >
-            <img
-              class="learnResize"
-              src="../static/events/learnMore.png"
-              alt="learn more"
-            >
-          </a>
+          <a :href="item.learnMoreLink" target="_blank" class="button is-primary is-outlined learnMoreButton">Learn More</a>
         </div>
       </div>
     </div>
@@ -117,8 +108,8 @@ export default {
   }
 
   .imgResize {
-  max-height: 25em;
   max-width: 25em;
+  min-height: 25em;
   object-fit: cover; /* Do not scale the image */
   object-position: 50% 50%; /* Center the image within the element */
   border-radius: 40px;
@@ -131,10 +122,15 @@ export default {
 
   .white {
   background-color: white;
+  position: relative;
   border-radius: 40px;
   margin-top: 50px;
   }
-
+  .learnMoreButton {
+    position: absolute;
+    bottom: 10%;
+    left: 60%;
+  }
   @media (max-width: 768px) {
   .imgResize {
     min-height: 100vw;
@@ -144,6 +140,13 @@ export default {
   }
   .mainContainer {
     padding: 0;
+  }
+  .white {
+    position: static;
+  }
+  .learnMoreButton {
+    position: static;
+    margin: 5% 0%;
   }
   h2 {
   text-align: center;
