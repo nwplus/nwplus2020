@@ -112,7 +112,7 @@ export default {
   .imgResize {
   max-width: 25em;
   min-height: 26em;
-  max-height: 26em;
+  max-height: 33em;
   object-fit: cover; /* Do not scale the image */
   object-position: 50% 50%; /* Center the image within the element */
   border-radius: 40px;
