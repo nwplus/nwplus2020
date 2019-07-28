@@ -59,6 +59,8 @@ export default {
   font-family: "HKConcentrate-Medium", serif;
   text-align: left;
   padding: 2% 2%;
+  padding-right: 10%;
+  padding-left: 7%;
   @media(max-width: 900px) {
     text-align: center;
   }
@@ -109,7 +111,8 @@ export default {
 
   .imgResize {
   max-width: 25em;
-  min-height: 25em;
+  min-height: 26em;
+  max-height: 26em;
   object-fit: cover; /* Do not scale the image */
   object-position: 50% 50%; /* Center the image within the element */
   border-radius: 40px;
@@ -127,9 +130,8 @@ export default {
   margin-top: 50px;
   }
   .learnMoreButton {
-    position: absolute;
-    bottom: 10%;
-    left: 60%;
+    margin-top: 5%;
+
   }
   @media (max-width: 768px) {
   .imgResize {
