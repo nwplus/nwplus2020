@@ -72,7 +72,11 @@ export default {
       {
         /* buefy options */
       }
-    ]
+    ],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-144737203-1',
+      dev: false
+    }]
   ],
 
   /*
