@@ -12,7 +12,7 @@ jobs:
     - script: yarn lint && yarn test && yarn generate
       name: 'Web'
     - stage: Deploy Staging
-      script: yarn generate:prod && mv dist/* public/
+      script: yarn generate:prod && mkdir public && mv dist/* public/
       deploy:
         provider: firebase
         token:
