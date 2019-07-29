@@ -18,6 +18,8 @@ jobs:
         token:
           secure: $FIREBASE_TOKEN
         project: "nwhacks-2019-dev"
+        on:
+          branch: dev
     - stage: Deploy
       script: yarn generate:gh-pages
       deploy:
