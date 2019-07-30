@@ -4,7 +4,7 @@ notifications:
   email: false
 install:
   - yarn install
-  - cd functions/; npm install
+  - cd functions/; npm install; cd ../;
 jobs:
   include:
     - stage: "Lint, Test and Build"
