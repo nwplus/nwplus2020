@@ -57,7 +57,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase.js', '~plugins/vue-scrollto.js'],
+  plugins: ['~/plugins/firebase.js'],
 
   /*
    ** Nuxt.js modules
@@ -76,7 +76,8 @@ export default {
     ['@nuxtjs/google-analytics', {
       id: 'UA-144737203-1',
       dev: false
-    }]
+    }],
+    ['vue-scrollto/nuxt', { offset: -80 }]
   ],
 
   /*
