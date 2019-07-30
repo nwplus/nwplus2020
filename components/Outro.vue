@@ -17,6 +17,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
+$title_font: Merriweather;
+$sub_font: Apercu Pro;
 .outro {
   align-items: center;
   color: #21258A;
@@ -28,7 +30,7 @@ export default {
   font-size: 24px;
   max-width: 80%;
   text-align: center;
-  font-family: "HKConcentrate-Medium";
+  font-family: $sub_font;
   @include until($desktop) {
     text-align: center;
     font-size: 18px;

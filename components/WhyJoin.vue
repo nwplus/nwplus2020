@@ -64,6 +64,9 @@
   font-family: "HKConcentrate-Medium";
   src: url("../assets/fonts/HKConcentrate-Medium.woff") format("woff");
 }
+
+$title_font: Merriweather;
+$sub_font: Apercu Pro;
 .backgroundRiverContainer {
     position: relative;
     width: 100vw;
@@ -86,7 +89,7 @@
   padding: 0;
 }
 h2 {
-  font-family: "HKConcentrate-Medium";
+  font-family: $title_font;
   width: 30%;
   left: 10%;
   height: 45px;
@@ -115,7 +118,7 @@ h2 {
   box-sizing: content-box;
 }
 .cbd {
-  font-family: "HKConcentrate-Bold";
+  font-family: $title_font;
   font-size: 30px;
   line-height: 35px;
   font-weight: bold;
@@ -126,7 +129,7 @@ h2 {
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-  font-family: "HKConcentrate-Medium", serif;
+  font-family: $sub_font;
   @include until ($desktop) {
     width: 90%;
     padding: 5% 0%;

@@ -52,11 +52,12 @@ export default {
   font-family: "HKConcentrate-Bold";
   src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
 }
-
+$title_font: Merriweather;
+$sub_font: Apercu Pro, serif;
 .disclaimer {
   font-size: 12px;
   font-style: italic;
-  font-family: "HKConcentrate-Medium", serif;
+  font-family: $sub_font;
   text-align: left;
   padding: 2% 2%;
   padding-right: 10%;
@@ -82,7 +83,7 @@ export default {
   left: 10%;
   height: 45px;
   font-size: 32px;
-  font-family: "HKConcentrate-Medium";
+  font-family: $title_font;
   line-height: 40px;
   font-weight: 630;
   margin-bottom: 3%;
@@ -91,7 +92,7 @@ export default {
   }
 
   .text {
-  font-family: "Merriweather", serif;
+  font-family: $sub_font;
   font-size: 18px;
   color: #21258A;
   padding-right: 10%;
@@ -102,7 +103,7 @@ export default {
   .title {
   padding-left: 7%;
   padding-top: 8%;
-  font-family: "HKConcentrate-Bold";
+  font-family: $title_font;
   font-size: 32px;
   color: #21258A;
   line-height: 37px;

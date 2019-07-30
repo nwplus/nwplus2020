@@ -82,6 +82,10 @@ export default {
 <style lang="scss">
 @import "bulma/bulma.sass";
 
+$title_font: Merriweather;
+
+$sub_font: Apercu Pro;
+
 html body {
   width: 100vw;
   overflow-x: hidden;

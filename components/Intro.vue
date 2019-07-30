@@ -26,11 +26,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
+$title_font: Merriweather;
+$sub_font: Apercu Pro, serif;
 .text {
   font-size: 32px;
   line-height: 40px;
   color: #0c2264;
-  font-family: "HKConcentrate-Medium";
+  font-family: $sub_font;
   font-weight: bold;
   margin-top: 8%;
   margin-left: 8%;
@@ -51,7 +53,7 @@ export default {
   font-size: 18px;
   line-height: 21px;
   color: #0c2264;
-  font-family: "HKConcentrate-Medium", serif;
+  font-family: $sub_font;
   margin: 8%;
   margin-top: 5%;
   margin-bottom: 8%;

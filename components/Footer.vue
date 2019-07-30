@@ -34,7 +34,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
+$title_font: Merriweather;
+$sub_font: Apercu Pro, serif;
 .footerT {
   background-color: #3D3947;
   padding: 100px 0 100px 0;
@@ -48,6 +50,7 @@ export default {
 .footerT p {
   margin-top: 40px;
   margin-bottom: 0;
+  font-family: sub_font;
 }
 
 .footerT svg {
