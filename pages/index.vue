@@ -17,11 +17,11 @@
         <Intro :text="intro" :sub="introSub" />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
-        <Outro :text="outro" />
+        <Outro id="contact" :text="outro" />
         <Sponsors v-if="sponsorFlag" :items="Sponsors" />
       </div>
     </section>
-    <Footer id="contact" :text="footer" />
+    <Footer :text="footer" />
     <div class="backgroundBottom">
       <img src="../assets/sprite/svg/backgroundBottom.png">
     </div>
@@ -83,7 +83,6 @@ export default {
 @import "bulma/bulma.sass";
 
 $title_font: Merriweather;
-
 $sub_font: Apercu Pro;
 
 html body {
@@ -149,7 +148,7 @@ html body {
   z-index: -1;
 }
 #nwtitle {
-  font-family: "Merriweather";
+  font-family: $title_font;
   font-weight: bold;
   font-size: 48px;
   line-height: 60px;
@@ -172,6 +171,7 @@ html body {
 
 .mainSection {
   margin: 0 auto;
+  margin-bottom: 0;
   /* min-height: 100vh; */
   display: flex;
   justify-content: center;
