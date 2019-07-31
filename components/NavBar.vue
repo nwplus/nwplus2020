@@ -6,7 +6,7 @@
           <img
             id="navbar-logo"
             class="navbar-item"
-            src="../assets/sprite/svg/nwplus-logo.svg"
+            src="../assets/sprite/svg/nwplus-logo.png"
             alt="nwPlus logo"
           >
         </a>
@@ -72,20 +72,20 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #94d3fc;
+  background-color: #33303B;
   width: 100%;
   padding: 0;
 }
 .navbar-item {
   font-size: 24px;
-  color: white;
+  color: #0DEFE1;
   font-family: "Apercu Pro";
   padding: 8px 32px;
 }
 a.navbar-item:hover,
 a.navbar-item:focus,
 a.navbar-item:focus-within {
-  color: #0c2264;
+  color: white;
   background: none;
 }
 .buttons {
@@ -96,7 +96,7 @@ a.navbar-item:focus-within {
   height: 59px;
   width: auto;
   box-sizing: border-box;
-  padding: 0;
+  padding: 2px 0 0 0;
 }
 .a {
   font-size: 24px;

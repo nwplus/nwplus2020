@@ -159,6 +159,7 @@ html body {
 }
 #nwsubtitle {
   font-family: $sub_font;
+  font-weight: normal;
 }
 #nwtitle {
   font-family: $title_font;
@@ -166,7 +167,7 @@ html body {
   font-size: 48px;
   line-height: 60px;
   margin-top: 20%;
-  color: #0c2264;
+  color: #0DEFE1;
   text-align: left;
   margin-left: 8%;
   margin-bottom: 20px;

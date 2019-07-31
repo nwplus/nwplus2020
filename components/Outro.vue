@@ -30,6 +30,7 @@ $sub_font: Apercu Pro, sans-serif;
   font-size: 24px;
   max-width: 80%;
   text-align: center;
+  font-family: $sub_font;
   @include until($desktop) {
     text-align: center;
     font-size: 18px;

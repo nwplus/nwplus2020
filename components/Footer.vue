@@ -39,9 +39,9 @@ export default {
 $title_font: Merriweather;
 $sub_font: Apercu Pro, sans-serif;
 .footerT {
-  background-color: #3D3947;
+  background-color: #33303B;
   padding: 100px 0 100px 0;
-  color: white;
+  color: #0DEFE1;
   position: relative;
   align-items: center;
   text-align: center;
@@ -57,6 +57,7 @@ $sub_font: Apercu Pro, sans-serif;
 .footerT svg {
   height: 30px;
   width: 90px;
+  color: #0DEFE1;
 }
 
 .left-fg {

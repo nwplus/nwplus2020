@@ -10,7 +10,7 @@
             <b-input v-model="email" class="emailInput" placeholder="hacker@nwplus.io" type="email" />
           </div>
           <div class="level-item">
-            <b-button style="color: white;" class="subBtn" @click="submit">
+            <b-button style="color: white; border:none" class="subBtn" @click="submit">
               Subscribe
             </b-button>
           </div>
@@ -96,8 +96,7 @@ $sub_font: Apercu Pro, sans-serif;
   font-size: 18px;
   line-height: 23px;
   font-family: $sub_font;
-  font-weight: 600;
-  color: #21258A;
+  color: #0DEFE1;
   margin-bottom: 10px;
 }
 
@@ -107,6 +106,6 @@ $sub_font: Apercu Pro, sans-serif;
   color: white;
   font-size: 17px;
   line-height: 21px;
-  font-family: "HKConcentrate-Bold";
+  font-family: $sub_font;
 }
 </style>
