@@ -55,7 +55,7 @@ $sub_font: Apercu Pro, sans-serif;
   color: #0c2264;
   font-family: $sub_font;
   margin: 8%;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-bottom: 8%;
   width: 55%;
   text-align: left;

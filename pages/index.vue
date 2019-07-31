@@ -4,8 +4,10 @@
     <img class="sun" src="../assets/sprite/Sun.png">
     <NavBar />
     <section class="mainSection">
-      <div>
+      <div class="mainContent">
         <h1 id="nwtitle">
+          <img src="../assets/sprite/svg/nwplus.svg">
+          </br>
           UBC nwPlus
           <div id="nwsubtitle" style="font-size: 30px;">
             Connect, build, discover
@@ -14,7 +16,7 @@
         <img class="topPeople" src="../assets/sprite/topPeople.png">
         <Email />
         <img class="squTree" src="../static/backgroundSvg/squTree.svg">
-        <Intro :text="intro" :sub="introSub" />
+        <Intro id="intro" :text="intro" :sub="introSub" />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Outro id="contact" :text="outro" />
@@ -157,6 +159,11 @@ html body {
   left: 0%;
   z-index: -1;
 }
+
+.mainContent {
+  margin-top: 12%;
+}
+
 #nwsubtitle {
   font-family: $sub_font;
   font-weight: normal;
@@ -166,11 +173,10 @@ html body {
   font-weight: bold;
   font-size: 48px;
   line-height: 60px;
-  margin-top: 20%;
-  color: #0DEFE1;
   text-align: left;
-  margin-left: 8%;
+  color: #0DEFE1;
   margin-bottom: 20px;
+  margin-left: 8%;
   @include until($desktop) {
     width: 100%;
     margin-left: 0%;
@@ -181,6 +187,10 @@ html body {
     margin-top: 20%;
     width: 82%;
   }
+}
+
+#intro {
+  padding-top: 50px;
 }
 
 .mainSection {
