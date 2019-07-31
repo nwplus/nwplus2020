@@ -1,17 +1,18 @@
 <template>
-  <div style="position: relative;">
-    <img class="backgroundTop" src="../assets/sprite/svg/topBaclground.svg">
+  <div style="position: relative; width: 100%;">
+    <img class="backgroundTop desktop" src="../assets/sprite/svg/topBaclground.svg">
+    <img class="backgroundTop mobile" src="../assets/sprite/svg/topBgMobile.svg">
     <img class="sun" src="../assets/sprite/Sun.png">
     <NavBar />
     <section class="mainSection">
       <div class="mainContent">
         <h1 id="nwtitle">
-          <img src="../assets/sprite/svg/nwplus.svg">
+          <img class="logo" src="../assets/sprite/svg/nwplus.svg">
           </br>
           UBC nwPlus
-          <div id="nwsubtitle" style="font-size: 30px;">
+          <h2 id="nwsubtitle">
             Connect, build, discover
-          </div>
+          </h2>
         </h1>
         <img class="topPeople" src="../assets/sprite/topPeople.png">
         <Email />
@@ -160,13 +161,37 @@ html body {
   z-index: -1;
 }
 
+.desktop {
+  @include until($tablet) {
+    display: none;
+  }
+}
+
+.mobile {
+  @include from($tablet) {
+    display: none;
+  }
+}
+
 .mainContent {
   margin-top: 12%;
 }
-
+.logo {
+  @include until($desktop) {
+    margin-top: 10px;
+    height: 80px;
+  }
+}
 #nwsubtitle {
   font-family: $sub_font;
   font-weight: normal;
+  font-size: 30px;
+  @include until($desktop) {
+    font-size: 26px;
+  }
+  @media (max-width: 380px) {
+    font-size: 22px;
+  }
 }
 #nwtitle {
   font-family: $title_font;
@@ -179,13 +204,20 @@ html body {
   margin-left: 8%;
   @include until($desktop) {
     width: 100%;
-    margin-left: 0%;
-    text-align: center;
+    margin-top: 12%;
+    font-size: 42px;
+    line-height: 50px;
+    padding-bottom: 30px;
   }
-  @media (max-width: 350px) {
+  @include tablet-only{
+    margin-top: 0;
+  }
+  @media (max-width: 380px) {
     margin: auto;
     margin-top: 20%;
-    width: 82%;
+    font-size: 38px;
+    line-height: 46px;
+    width: 90%;
   }
 }
 
@@ -210,9 +242,5 @@ html body {
 
 .links {
   padding-top: 15px;
-}
-
-p {
-  font-family: "HKConcentrate-Medium";
 }
 </style>

@@ -79,7 +79,8 @@ $sub_font: Apercu Pro, sans-serif;
 .emailContainer {
   text-align: left;
   @include until ($desktop) {
-    text-align: center;
+    // text-align: center;
+    display: none;
   }
 }
 
