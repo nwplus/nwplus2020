@@ -3,7 +3,7 @@
     <div class="backgroundRiverContainer">
       <img
         id="backgroundRiver"
-        src="../static/cRiver.png"
+        src="../assets/sprite/criver.png"
       >
     </div>
     <div class="spacing">
@@ -14,7 +14,7 @@
       <div class="columns">
         <div id="cConnect" class="column no-margin">
           <div>
-            <img src="../static/cConnect.png">
+            <img src="../assets/sprite/cconnect.png">
             <br><br>
             <div class="cbd">
               Connect
@@ -26,7 +26,7 @@
         </div>
         <div id="cBuild" class="column no-margin">
           <div>
-            <img src="../static/cBuild.png">
+            <img src="../assets/sprite/cbuild.png">
             <br><br>
             <div class="cbd">
               Build
@@ -38,7 +38,7 @@
         </div>
         <div id="cDiscover" class="column no-margin">
           <div>
-            <img src="../static/cDiscover.png">
+            <img src="../assets/sprite/discover.png">
             <br><br>
             <div class="cbd">
               Discover
@@ -55,15 +55,6 @@
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
-@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
-@font-face {
-  font-family: "HKConcentrate-Bold";
-  src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
-}
-@font-face {
-  font-family: "HKConcentrate-Medium";
-  src: url("../assets/fonts/HKConcentrate-Medium.woff") format("woff");
-}
 
 $title_font: Merriweather;
 $sub_font: Apercu Pro, sans-serif;
