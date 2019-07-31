@@ -47,13 +47,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
-@font-face {
-  font-family: "HKConcentrate-Bold";
-  src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
-}
 $title_font: Merriweather;
-$sub_font: Apercu Pro, serif;
+$sub_font: Apercu Pro, sans-serif;
 .disclaimer {
   font-size: 12px;
   font-style: italic;

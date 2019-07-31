@@ -34,9 +34,10 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
+@import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: Apercu Pro, serif;
+$sub_font: Apercu Pro, sans-serif;
 .footerT {
   background-color: #3D3947;
   padding: 100px 0 100px 0;
@@ -50,7 +51,7 @@ $sub_font: Apercu Pro, serif;
 .footerT p {
   margin-top: 40px;
   margin-bottom: 0;
-  font-family: sub_font;
+  font-family: $sub_font;
 }
 
 .footerT svg {

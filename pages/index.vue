@@ -7,7 +7,7 @@
       <div>
         <h1 id="nwtitle">
           UBC nwPlus
-          <div style="font-size: 30px;">
+          <div id="nwsubtitle" style="font-size: 30px;">
             Connect, build, discover
           </div>
         </h1>
@@ -81,9 +81,19 @@ export default {
 
 <style lang="scss">
 @import "bulma/bulma.sass";
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
+
+// @font-face {
+//   font-family: "HKConcentrate-Bold";
+//   src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
+// }
+@font-face {
+  font-family: "Apercu Pro";
+  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+}
 
 $title_font: Merriweather;
-$sub_font: Apercu Pro;
+$sub_font: Apercu Pro, sans-serif;
 
 html body {
   width: 100vw;
@@ -146,6 +156,9 @@ html body {
   position: absolute;
   left: 0%;
   z-index: -1;
+}
+#nwsubtitle {
+  font-family: $sub_font;
 }
 #nwtitle {
   font-family: $title_font;

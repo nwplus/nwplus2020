@@ -75,7 +75,7 @@ export default {
 <style lang="scss">
 @import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: Apercu Pro, serif;
+$sub_font: Apercu Pro, sans-serif;
 .emailContainer {
   text-align: left;
   @include until ($desktop) {

@@ -1,5 +1,5 @@
 <template>
-  <div id="outro" class="outro">
+  <div class="outro">
     <p>{{ text }}</p>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: Apercu Pro;
+$sub_font: Apercu Pro, sans-serif;
 .outro {
   align-items: center;
   color: #21258A;
@@ -30,7 +30,6 @@ $sub_font: Apercu Pro;
   font-size: 24px;
   max-width: 80%;
   text-align: center;
-  font-family: $sub_font;
   @include until($desktop) {
     text-align: center;
     font-size: 18px;

@@ -66,7 +66,7 @@
 }
 
 $title_font: Merriweather;
-$sub_font: Apercu Pro;
+$sub_font: Apercu Pro, sans-serif;
 .backgroundRiverContainer {
     position: relative;
     width: 100vw;
