@@ -4,16 +4,15 @@
       <h1 class="subscribeText">
         Subscribe to our newsletter for upcoming events
       </h1>
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <b-input v-model="email" class="emailInput" placeholder="hacker@nwplus.io" type="email" />
-          </div>
-          <div class="level-item">
-            <b-button style="color: white; border:none" class="subBtn" @click="submit">
-              Subscribe
-            </b-button>
-          </div>
+      <h1 class="subscribeTextMobile">
+        Subscribe to our newsletter
+      </h1>
+      <div class="level is-mobile">
+        <div class="level-item">
+          <b-input v-model="email" class="emailInput" placeholder="hacker@nwplus.io" type="email" />
+          <b-button style="color: white; border:none;" class="subBtn" @click="submit">
+            Subscribe
+          </b-button>
         </div>
       </div>
     </div>
@@ -78,9 +77,10 @@ $title_font: Merriweather;
 $sub_font: Apercu Pro, sans-serif;
 .emailContainer {
   text-align: left;
+
   @include until ($desktop) {
     // text-align: center;
-    display: none;
+    // display: none;
   }
 }
 
@@ -90,7 +90,6 @@ $sub_font: Apercu Pro, sans-serif;
   box-sizing: border-box;
   border-radius: 4px;
   width: 313px;
-  padding-right: 0px !important;
 }
 
 .subscribeText {
@@ -99,14 +98,35 @@ $sub_font: Apercu Pro, sans-serif;
   font-family: $sub_font;
   color: #0DEFE1;
   margin-bottom: 10px;
+  display: block;
+  @include until ($desktop) {
+    display: none;
+  }
+}
+
+.subscribeTextMobile {
+  margin: auto;
+  font-size: 18px;
+  line-height: 23px;
+  font-family: $sub_font;
+  color: #21258A;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  @include until ($desktop) {
+    display: block;
+  }
 }
 
 .subBtn {
+  position: absolute;
   background: linear-gradient(180deg, #4DE8C2 0%, #18CDCD 100%, #19CBCB 100%);
   text-align: center;
   color: white;
   font-size: 17px;
   line-height: 21px;
   font-family: $sub_font;
+  transform: translate(-20px);
 }
 </style>
