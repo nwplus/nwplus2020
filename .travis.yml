@@ -12,15 +12,6 @@ jobs:
       script: cd functions/; npm run build && npm run lint
     - script: yarn lint && yarn test && yarn generate
       name: 'Web'
-    - stage: Deploy Staging
-      script: yarn generate:prod && mkdir public && mv dist/* public/
-      deploy:
-        provider: firebase
-        token:
-          secure: $FIREBASE_TOKEN
-        project: "nwhacks-2019-dev"
-        on:
-          branch: dev
     - stage: Deploy
       script: yarn generate:gh-pages
       deploy:
@@ -33,7 +24,5 @@ jobs:
           branch: master
 stages:
   - "Lint, Test and Build"
-  - name: "Deploy Staging"
-    if: branch = dev
   - name: Deploy
     if: branch = master
