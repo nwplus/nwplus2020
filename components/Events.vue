@@ -9,7 +9,7 @@
     >
       <div class="columns white">
         <img class="column imgResize" :src="item.imageLink">
-        <div class="column">
+        <div class="column ">
           <p class="title">
             {{ item.title }}
           </p>
@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "bulma/bulma.sass";
 $title_font: Merriweather;
 $sub_font: Apercu Pro, sans-serif;
 .disclaimer {
@@ -126,7 +127,13 @@ $sub_font: Apercu Pro, sans-serif;
   margin-top: 50px;
   }
   .learnMoreButton {
+    position: static;
     margin-top: 5%;
+    // z-index: 1;
+    @include from ($desktop) {
+      margin-left: 7%;
+      float: left;
+    }
 
   }
   @media (max-width: 768px) {
