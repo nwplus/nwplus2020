@@ -1,10 +1,10 @@
 <template>
   <div class="emailContainer">
     <div class="leftPos" style="padding: 1.5% 8%;">
-      <h1 class="subscribeText">
+      <h1 id="subscribeText">
         Subscribe to our newsletter for upcoming events
       </h1>
-      <h1 class="subscribeTextMobile">
+      <h1 id="subscribeTextMobile">
         Subscribe to our newsletter
       </h1>
       <div class="level is-mobile">
@@ -90,11 +90,11 @@ $sub_font: Apercu Pro, sans-serif;
   z-index: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 313px;
+  // width: 313px;
   padding-right: 0px !important;
 }
 
-.subscribeText {
+#subscribeText {
   font-size: 18px;
   line-height: 23px;
   font-family: $sub_font;
@@ -106,7 +106,7 @@ $sub_font: Apercu Pro, sans-serif;
   }
 }
 
-.subscribeTextMobile {
+#subscribeTextMobile {
   margin: auto;
   font-size: 18px;
   line-height: 23px;

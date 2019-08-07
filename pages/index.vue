@@ -107,8 +107,7 @@ html body {
 .desktopOnly {
   @include until($desktop) {
     display: none;
-  }
-}
+  }}
 
 .mobileOnly {
   display: none;
@@ -116,6 +115,7 @@ html body {
     display: block;
   }
 }
+
 .squTree {
   position: absolute;
   z-index: -1;
