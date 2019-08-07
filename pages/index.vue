@@ -108,7 +108,6 @@ html body {
   @include until($desktop) {
     display: none;
   }
-
 }
 
 .mobileOnly {

@@ -65,13 +65,6 @@ export default {
           })
         }
       }
-    },
-    isMobile() {
-      if (screen.width > 1024) {
-        return true
-      } else {
-        return false
-      }
     }
   }
 }
@@ -98,6 +91,7 @@ $sub_font: Apercu Pro, sans-serif;
   box-sizing: border-box;
   border-radius: 4px;
   width: 313px;
+  padding-right: 0px !important;
 }
 
 .subscribeText {
