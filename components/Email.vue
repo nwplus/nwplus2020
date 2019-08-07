@@ -8,7 +8,7 @@
         Subscribe to our newsletter
       </h1>
       <div class="level is-mobile">
-        <div class="level-item">
+        <div class="level-item isMobile">
           <b-input v-model="email" class="emailInput" placeholder="hacker@nwplus.io" type="email" />
           <b-button style="color: white; border:none;" class="subBtn" @click="submit">
             Subscribe
@@ -65,6 +65,13 @@ export default {
           })
         }
       }
+    },
+    isMobile() {
+      if (screen.width > 1024) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }
@@ -77,10 +84,11 @@ $title_font: Merriweather;
 $sub_font: Apercu Pro, sans-serif;
 .emailContainer {
   text-align: left;
+}
 
-  @include until ($desktop) {
-    // text-align: center;
-    // display: none;
+.isMobile {
+  @include from ($desktop) {
+    justify-content: flex-start !important;
   }
 }
 
