@@ -8,20 +8,21 @@
       <div class="mainContent">
         <h1 id="nwtitle">
           <img class="logo" src="../assets/sprite/svg/nwplus.svg">
-          </br>
+          <br>
           UBC nwPlus
           <h2 id="nwsubtitle">
             Connect, build, discover
           </h2>
         </h1>
         <img class="topPeople" src="../assets/sprite/topPeople.png">
-        <Email />
+        <Email class="desktopOnly" />
         <img class="squTree" src="../static/backgroundSvg/squTree.svg">
         <Intro id="intro" :text="intro" :sub="introSub" />
         <WhyJoin id="whyJoin" />
         <Events id="events" :items="events" />
         <Outro id="contact" :text="outro" />
         <Sponsors v-if="sponsorFlag" :items="Sponsors" />
+        <Email class="mobileOnly" />
       </div>
     </section>
     <Footer :text="footer" />
@@ -101,6 +102,18 @@ $sub_font: Apercu Pro, sans-serif;
 html body {
   width: 100vw;
   overflow-x: hidden;
+}
+
+.desktopOnly {
+  @include until($desktop) {
+    display: none;
+  }}
+
+.mobileOnly {
+  display: none;
+  @include until($desktop) {
+    display: block;
+  }
 }
 
 .squTree {
