@@ -23,7 +23,9 @@
             We use * to specifically and intentionally include cis and trans women,
             as well as non-binary, agender, intersex people.
           </p>
-          <a :href="item.learnMoreLink" target="_blank" class="button is-primary is-outlined learnMoreButton">Learn More</a>
+          <a :href="item.learnMoreLink" target="_blank" class="learnMoreButton">
+            <img src="../assets/sprite/svg/LearnMoreButton.svg" alt="">
+          </a>
         </div>
       </div>
     </div>
@@ -129,12 +131,15 @@ $sub_font: Apercu Pro, sans-serif;
   .learnMoreButton {
     position: static;
     margin-top: 5%;
+    height: 40px;
     // z-index: 1;
     @include from ($desktop) {
       margin-left: 7%;
       float: left;
     }
-
+    &:hover {
+        box-shadow: 2px 4px 6px rgba(114, 114, 114, 0.25);
+    }
   }
   @media (max-width: 768px) {
   .imgResize {
