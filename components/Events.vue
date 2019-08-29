@@ -138,7 +138,7 @@ $sub_font: Apercu Pro, sans-serif;
       float: left;
     }
     &:hover {
-        box-shadow: 2px 4px 6px rgba(114, 114, 114, 0.25);
+        box-shadow: 2px 3px 4px rgba(114, 114, 114, 0.25);
     }
   }
   @media (max-width: 768px) {
