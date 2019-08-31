@@ -9,7 +9,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 } : {}
 
 // Handles production env variables when building (These can be public)
-const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV === 'PRODUCTION' ? {
   env: {
     FIREBASE_API_KEY: 'AIzaSyCBkQHeikIsiYZ2yOHiqH_mGJKDWMDU500',
     FIREBASE_AUTH_DOMAIN: 'nwhacks-2019.firebaseapp.com',
@@ -22,7 +22,9 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
   }
 } : {
-  mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+  env: {
+    mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+  }
 }
 
 export default {
@@ -55,7 +57,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase.js', '~plugins/vue-scrollto.js'],
+  plugins: ['~/plugins/firebase.js'],
 
   /*
    ** Nuxt.js modules
@@ -70,7 +72,12 @@ export default {
       {
         /* buefy options */
       }
-    ]
+    ],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-144737203-1',
+      dev: false
+    }],
+    ['vue-scrollto/nuxt', { offset: -80 }]
   ],
 
   /*

@@ -1,5 +1,8 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin'
+import * as corsModule from "cors";
+const cors = corsModule({origin: true})
+//import * as Parser from 'json2csv'
 admin.initializeApp()
 const Mailchimp = require('mailchimp-api-v3');
 const API_KEY: string = functions.config().mailchimp.key
@@ -8,9 +11,8 @@ const mailchimp = new Mailchimp(API_KEY)
 // // https://firebase.google.com/docs/functions/typescript
 //
 export const subscribeToMailingList = functions.https.onRequest(async (request, response) => {
-    response.set('Access-Control-Allow-Origin', '*');
-    response.set('Access-Control-Allow-Headers', 'Content-Type, crossDomain');
-    if (request.body.email_address == '') {
+    return cors(request, response, async () => {
+        if (request.body.email_address == '') {
             response.sendStatus(400)
             return
         }
@@ -28,10 +30,12 @@ export const subscribeToMailingList = functions.https.onRequest(async (request, 
             if (error.indexOf('already a list member') !== -1) {
                 response.status(502).send({errors: 'This email has already signed up'})
                 return
-            }else if (error.indexOf('looks fake or invalid') !== -1) {
+            }else if ((error.indexOf('looks fake or invalid') !== -1)||
+                       (error.indexOf('valid email address') !== -1)) {
                 response.status(502).send({errors: error})
                 return
             }else {
+                console.log(reply.errors)
                 response.status(502).send({errors: 'Unexpected Mailchimp error'})
                 return
             }
@@ -42,9 +46,11 @@ export const subscribeToMailingList = functions.https.onRequest(async (request, 
 
     }catch (e){
         console.log("Server error")
+        console.log(e)
         response.sendStatus(500)
         return
     }
+    })
 });
 const updateAdminIDs = async () => {
     const db = admin.firestore()
@@ -61,3 +67,13 @@ export const updateAdmins = functions.https.onRequest( async (request, response)
 export const updateAdminsOnAdd = functions.firestore.document('admins/*').onCreate(async (change, context) => {
     await updateAdminIDs()
 })
+// export const ApplicantToCSV = functions.https.onRequest( async (request, response) => {
+//     const db = admin.firestore()
+//     const hackerReference = db.collection('hacker_short_info')
+//     const snapshot = await hackerReference.get()
+//     const hackerInfo = snapshot.docs.map((doc) => doc.data())
+//     const parser = new Parser.Parser();
+//     const csv = parser.parse(hackerInfo);
+//     response.attachment('Hackers.csv')
+//     response.status(200).send(csv)
+// })

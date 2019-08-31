@@ -1,18 +1,20 @@
 <template>
   <div class="whyjoin">
-    <!-- <img
-      class="backgroundRiver"
-      src="../static/cRiver.png"
-    > -->
+    <div class="backgroundRiverContainer">
+      <img
+        id="backgroundRiver"
+        src="../assets/sprite/criver.png"
+      >
+    </div>
     <div class="spacing">
       <h2>
         Why join nwPlus?
       </h2>
       <br>
       <div class="columns">
-        <div id="cConnect" class="column">
+        <div id="cConnect" class="column no-margin">
           <div>
-            <img src="../static/cConnect.png">
+            <img src="../assets/sprite/cconnect.png">
             <br><br>
             <div class="cbd">
               Connect
@@ -22,9 +24,9 @@
             </p>
           </div>
         </div>
-        <div id="cBuild" class="column">
+        <div id="cBuild" class="column no-margin">
           <div>
-            <img src="../static/cBuild.png">
+            <img src="../assets/sprite/cbuild.png">
             <br><br>
             <div class="cbd">
               Build
@@ -34,9 +36,9 @@
             </p>
           </div>
         </div>
-        <div id="cDiscover" class="column">
+        <div id="cDiscover" class="column no-margin">
           <div>
-            <img src="../static/cDiscover.png">
+            <img src="../assets/sprite/discover.png">
             <br><br>
             <div class="cbd">
               Discover
@@ -51,26 +53,34 @@
   </div>
 </template>
 
-<style scoped>
-@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
-@font-face {
-  font-family: "HKConcentrate-Bold";
-  src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
+
+$title_font: Merriweather;
+$sub_font: Apercu Pro, sans-serif;
+.backgroundRiverContainer {
+    position: relative;
+    width: 100vw;
 }
-@font-face {
-  font-family: "HKConcentrate-Medium";
-  src: url("../assets/fonts/HKConcentrate-Medium.woff") format("woff");
+#backgroundRiver {
+    position: absolute;
+    left: 0;
+    top: -5%;
+    transform: translate(0, -21vw);
+  z-index: -1;
+  width: 100% !important;
+  max-width: 100% !important;
 }
-/* .backgroundRiver {
-  position: absolute;
-  z-index: -10;
-  width: 100%;
-  left: 0;
-  height: 1124px;
-  top: 18vh;
-} */
+@media only screen and (max-width: 768px) {
+    .backgroundRiverContainer {
+        display: none;
+    }
+}
+.no-margin {
+  padding: 0;
+}
 h2 {
-  font-family: "Merriweather", serif;
+  font-family: $title_font;
   width: 30%;
   left: 10%;
   height: 45px;
@@ -78,18 +88,28 @@ h2 {
   line-height: 40px;
   font-weight: 630;
   margin-bottom: 3%;
+  @include until ($desktop) {
+    text-align: center;
+    left: 0%;
+    width: 100%
+  }
 }
 .spacing {
   margin-left: 5%;
-  width: 87vw;
   color: #0c2264;
+  @include until($desktop) {
+    margin: auto;
+  }
+}
+#whyJoin {
+  margin-bottom: 8%;
 }
 .whyjoin img {
   width: 277px;
   box-sizing: content-box;
 }
 .cbd {
-  font-family: "HKConcentrate-Bold";
+  font-family: $title_font;
   font-size: 30px;
   line-height: 35px;
   font-weight: bold;
@@ -100,5 +120,14 @@ h2 {
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  font-family: $sub_font;
+  @include until ($desktop) {
+    width: 90%;
+    padding: 5% 0%;
+    margin: auto;
+  }
+  @media (max-width: 350px) {
+    width: 82%;
+  }
 }
 </style>

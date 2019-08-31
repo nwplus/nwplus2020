@@ -88,3 +88,7 @@ sw.*
 functions/\.runtimeconfig\.json
 
 functions/lib/
+
+public/
+
+docs/

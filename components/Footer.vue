@@ -9,15 +9,15 @@
       <img class="right-fg" src="../static/footer/right-fg.png">
       <img class="right-bg" src="../static/footer/right-bg.png">
     </div>
-    <div class="footer">
+    <div class="footerT">
       <a href="https://www.facebook.com/nwplusubc/">
-        <svg-icon name="fb" /></a>
+        <svg-icon name="fb" class="icon-animation" /></a>
       <a href="https://www.instagram.com/nwplusubc/">
-        <svg-icon name="insta" /></a>
+        <svg-icon name="insta" class="icon-animation" /></a>
       <a href="https://medium.com/nwplusubc">
-        <svg-icon name="medium" /></a>
+        <svg-icon name="medium" class="icon-animation" /></a>
       <a href="https://twitter.com/nwPlusubc">
-        <svg-icon name="twitter" /></a>
+        <svg-icon name="twitter" class="icon-animation" /></a>
       <p> {{ text }} </p>
     </div>
   </div>
@@ -34,25 +34,30 @@ export default {
 }
 </script>
 
-<style>
-.footer {
-  background-color: #3D3947;
+<style lang="scss">
+@import "bulma/bulma.sass";
+$title_font: Merriweather;
+$sub_font: Apercu Pro, sans-serif;
+.footerT {
+  background-color: #33303B;
   padding: 100px 0 100px 0;
-  color: white;
+  color: #0DEFE1;
   position: relative;
   align-items: center;
   text-align: center;
   z-index: 0;
 }
 
-.footer p {
+.footerT p {
   margin-top: 40px;
   margin-bottom: 0;
+  font-family: $sub_font;
 }
 
-.footer svg {
+.footerT svg {
   height: 30px;
   width: 90px;
+  color: #0DEFE1;
 }
 
 .left-fg {
@@ -65,7 +70,8 @@ export default {
 .left-bg {
   position: relative;
   margin-left: -300px;
-  z-index: -10;
+  top: 20px;
+  z-index: 0;
   width: auto;
 }
 
@@ -85,7 +91,7 @@ export default {
   position: relative;
   margin-right: -60px;
   float: right;
-  z-index: -10;
+  z-index: 0;
   width: auto;
 }
 
@@ -97,7 +103,7 @@ export default {
   width: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .left-fg {
     margin-bottom: -100px;
   }
@@ -151,5 +157,32 @@ export default {
   .bottom img {
     height: 150px;
   }
+}
+
+@media (max-width: 350px) {
+  .footerT svg {
+    height: 20px;
+    width: 50px;
+  }
+}
+
+.icon-animation:hover {
+    animation: pop-up 2s linear 0s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-6px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
 }
 </style>

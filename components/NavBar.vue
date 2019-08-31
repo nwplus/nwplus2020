@@ -6,7 +6,7 @@
           <img
             id="navbar-logo"
             class="navbar-item"
-            src="../assets/sprite/svg/nwplus-logo.svg"
+            src="../assets/sprite/svg/nwplus-logo.png"
             alt="nwPlus logo"
           >
         </a>
@@ -28,7 +28,6 @@
           <div class="buttons">
             <a v-scroll-to="'#whyJoin'" href="#" class="navbar-item">About</a>
             <a v-scroll-to="'#events'" href="#" class="navbar-item">Events</a>
-            <a href="http://lhd.nwplus.io" class="navbar-item">Local Hack Day</a>
             <a v-scroll-to="'#contact'" href="#" class="navbar-item">Contact us</a>
           </div>
         </div>
@@ -73,20 +72,20 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #4d5682;
+  background-color: #33303B;
   width: 100%;
   padding: 0;
 }
 .navbar-item {
   font-size: 24px;
-  color: white;
-  font-family: "HKConcentrate-Medium";
+  color: #0DEFE1;
+  font-family: "Apercu Pro";
   padding: 8px 32px;
 }
 a.navbar-item:hover,
 a.navbar-item:focus,
 a.navbar-item:focus-within {
-  color: #0c2264;
+  color: white;
   background: none;
 }
 .buttons {
@@ -97,7 +96,7 @@ a.navbar-item:focus-within {
   height: 59px;
   width: auto;
   box-sizing: border-box;
-  padding: 0;
+  padding: 2px 0 0 0;
 }
 .a {
   font-size: 24px;
@@ -118,8 +117,14 @@ a.navbar-item:focus-within {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 0;
 }
 .is-active .buttons .navbar-item {
   color: #4d5682;
+}
+@media (max-width: 768px) {
+  #navbar-logo {
+    height: 30px;
+  }
 }
 </style>

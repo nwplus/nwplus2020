@@ -1,19 +1,18 @@
 <template>
   <div class="emailContainer">
     <div class="leftPos" style="padding: 1.5% 8%;">
-      <h1 class="subscribeText">
+      <h1 id="subscribeText">
         Subscribe to our newsletter for upcoming events
       </h1>
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <b-input v-model="email" class="emailInput" placeholder="hacker@gmail.com" type="email" />
-          </div>
-          <div class="level-item">
-            <b-button class="subBtn" @click="submit">
-              Subscribe
-            </b-button>
-          </div>
+      <h1 id="subscribeTextMobile">
+        Subscribe to our newsletter
+      </h1>
+      <div class="level is-mobile">
+        <div class="level-item isMobile">
+          <b-input v-model="email" class="emailInput" placeholder="hacker@nwplus.io" type="email" />
+          <b-button style="color: white; border:none;" class="subBtn" @click="submit">
+            Subscribe
+          </b-button>
         </div>
       </div>
     </div>
@@ -72,16 +71,18 @@ export default {
 
 </script>
 
-<style>
-
+<style lang="scss">
+@import "bulma/bulma.sass";
+$title_font: Merriweather;
+$sub_font: Apercu Pro, sans-serif;
 .emailContainer {
-  padding-top: 50px;
+  text-align: left;
 }
 
-.leftPos {
-  width: 100vw;
-  text-align: left
-  /* Help, can't make it stick to the left */
+.isMobile {
+  @include from ($desktop) {
+    justify-content: flex-start !important;
+  }
 }
 
 .emailInput {
@@ -89,25 +90,45 @@ export default {
   z-index: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 313px;
+  // width: 313px;
   padding-right: 0px !important;
 }
 
-.subscribeText {
+#subscribeText {
   font-size: 18px;
   line-height: 23px;
-  font-family: "HKConcentrate-Medium";
-  font-weight: 600;
-  color: #21258A;
+  font-family: $sub_font;
+  color: #0DEFE1;
   margin-bottom: 10px;
+  display: block;
+  @include until ($desktop) {
+    display: none;
+  }
 }
 
-.subBtn, .subBtn:hover {
+#subscribeTextMobile {
+  margin: auto;
+  font-size: 18px;
+  line-height: 23px;
+  font-family: $sub_font;
+  color: #21258A;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  @include until ($desktop) {
+    display: block;
+  }
+}
+
+.subBtn {
+  position: absolute;
   background: linear-gradient(180deg, #4DE8C2 0%, #18CDCD 100%, #19CBCB 100%);
   text-align: center;
   color: white;
   font-size: 17px;
   line-height: 21px;
-  font-family: "HKConcentrate-Bold";
+  font-family: $sub_font;
+  transform: translate(-20px);
 }
 </style>

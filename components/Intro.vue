@@ -24,26 +24,54 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
+$title_font: Merriweather;
+$sub_font: Apercu Pro, sans-serif;
 .text {
   font-size: 32px;
   line-height: 40px;
   color: #0c2264;
-  font-family: "Merriweather", serif;
+  font-family: $title_font;
   font-weight: bold;
-  width: 40%;
+  margin-top: 8%;
   margin-left: 8%;
+  width:  52%;
   text-align: left;
-  margin-top: 135px;
-}
+  @include until($desktop) {
+    width: 100%;
+    margin: 6% auto;
+    margin-top: 10%;
+    text-align: center;
+  }
+  @media (max-width: 350px) {
+    width: 82%;
+  }
+  }
 
-.sub {
+  .sub {
   font-size: 18px;
   line-height: 21px;
   color: #0c2264;
-  font-family: "HKConcentrate-Medium";
+  font-family: $sub_font;
+  margin: 8%;
+  margin-top: 3%;
+  margin-bottom: 8%;
   width: 55%;
-  margin:  45px 0 120px 8%;
   text-align: left;
-}
+  @include until($desktop) {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 8%;
+    text-align: center;
+  }
+  @media (max-width: 350px) {
+    width: 82%;
+  }
+  }
+
+  // @media screen and (max-width: mobile) {
+  // margin-left: 0px;
+  // border: 5px solid blue;
+  // }
 </style>
