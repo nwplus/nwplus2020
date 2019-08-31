@@ -24,7 +24,7 @@
             as well as non-binary, agender, intersex people.
           </p>
           <a :href="item.learnMoreLink" target="_blank" class="learnMoreButton">
-            <img src="../assets/sprite/svg/LearnMoreButton.svg" alt="">
+            <img class="learnMoreImage" src="../assets/sprite/svg/LearnMoreButton.svg" alt="">
           </a>
         </div>
       </div>
@@ -137,9 +137,9 @@ $sub_font: Apercu Pro, sans-serif;
       margin-left: 7%;
       float: left;
     }
-    &:hover {
+  }
+  .learnMoreImage:hover {
         box-shadow: 2px 3px 4px rgba(114, 114, 114, 0.25);
-    }
   }
   @media (max-width: 768px) {
   .imgResize {
