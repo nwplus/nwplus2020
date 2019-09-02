@@ -117,6 +117,12 @@ $sub_font: Apercu Pro, sans-serif;
   border-radius: 40px;
   padding: 0;
   }
+  @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+  {
+    .imgResize {
+        max-height: 26em;
+    }
+  }
 
   .learnResize {
     width: 15vw;
