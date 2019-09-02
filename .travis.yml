@@ -13,7 +13,7 @@ jobs:
     - script: yarn lint && yarn test && yarn generate
       name: 'Web'
     - stage: Deploy
-      script: yarn generate
+      script: yarn generate:prod
       deploy:
         provider: pages
         skip_cleanup: true
