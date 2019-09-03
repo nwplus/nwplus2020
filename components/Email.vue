@@ -32,6 +32,7 @@ export default {
         await this.$axios.post(process.env.mailingListUrl, {
           email_address: this.email
         })
+        this.email = ''
         this.$toast.open({
           duration: 5000,
           message: `Successfully added you to our mailing list!`,
