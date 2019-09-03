@@ -63,12 +63,17 @@ export default {
     }
     // data
     const data = await fireDb.get()
-    const listOfSponsors = await fireDb.get(Sponsors)
     const listOfEvents = await fireDb.get(Events)
     // Populate sponsors with their image urls
-    const populatedSponsors = await Promise.all(
-      listOfSponsors.map(sponsor => getSponsorImage(sponsor))
-    )
+    let populatedSponsors
+    if (data.featureFlags.sponsorFlag) {
+      const listOfSponsors = await fireDb.get(Sponsors)
+      populatedSponsors = await Promise.all(
+        listOfSponsors.map(sponsor => getSponsorImage(sponsor))
+      )
+    } else {
+      populatedSponsors = []
+    }
     return {
       info: data.WelcomeText,
       Sponsors: populatedSponsors,
