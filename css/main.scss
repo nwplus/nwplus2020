@@ -1,0 +1,8 @@
+@import "~bulma/sass/utilities/_all";
+
+$colors: (
+    "success": (#2deee0, $black)
+);
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
