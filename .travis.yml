@@ -13,7 +13,7 @@ jobs:
     - script: yarn lint && yarn test && yarn generate
       name: 'Web'
     - stage: Deploy
-      script: yarn generate:prod
+      script: yarn generate:prod && echo "www.nwplus.io" >> dist/CNAME
       deploy:
         provider: pages
         skip_cleanup: true
