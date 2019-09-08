@@ -23,7 +23,7 @@
             We use * to specifically and intentionally include cis and trans women,
             as well as non-binary, agender, intersex people.
           </p>
-          <a :href="item.learnMoreLink" target="_blank" class="learnMoreButton">
+          <a :href="item.learnMoreLink || item.eventLink" target="_blank" class="learnMoreButton">
             <img class="learnMoreImage" src="../assets/sprite/svg/LearnMoreButton.svg" alt="">
           </a>
         </div>
