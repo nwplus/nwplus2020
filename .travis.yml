@@ -8,6 +8,13 @@ jobs:
   include:
     - stage: "Lint, Test and Build"
     - script: yarn lint && yarn test && yarn generate
+    - stage: "Staging"
+    - script: yarn generate:prod
+      deploy: 
+        provider: firebase
+        token:
+          secure: $FIREBASE_TOKEN
+        project: "nwhacks-2019"
     - stage: Deploy
       script: yarn generate:prod && echo "www.nwplus.io" >> dist/CNAME
       deploy:
@@ -20,5 +27,7 @@ jobs:
           branch: master
 stages:
   - "Lint, Test and Build"
+  - name: Staging
+    if: branch = dev
   - name: Deploy
     if: branch = master
