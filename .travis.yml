@@ -4,14 +4,10 @@ notifications:
   email: false
 install:
   - yarn install
-  - cd functions/; npm install; cd ../;
 jobs:
   include:
     - stage: "Lint, Test and Build"
-      name: 'Functions'
-      script: cd functions/; npm run build && npm run lint
     - script: yarn lint && yarn test && yarn generate
-      name: 'Web'
     - stage: Deploy
       script: yarn generate:prod && echo "www.nwplus.io" >> dist/CNAME
       deploy:
