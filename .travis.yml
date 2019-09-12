@@ -15,6 +15,8 @@ jobs:
         token:
           secure: $FIREBASE_TOKEN
         project: "nwhacks-2019"
+        on:
+          branch: dev
     - stage: Deploy
       script: yarn generate:prod && echo "www.nwplus.io" >> dist/CNAME
       deploy:
