@@ -12,6 +12,7 @@ jobs:
     - script: yarn generate:prod
       deploy: 
         provider: firebase
+        skip_cleanup: true
         token:
           secure: $FIREBASE_TOKEN
         project: "nwhacks-2019"
