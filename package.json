@@ -22,7 +22,7 @@
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/svg-sprite": "^0.2.1",
     "cross-env": "^5.2.0",
-    "firebase": "^6.1.0",
+    "firebase": "^7.2.0",
     "jquery": "^3.4.0",
     "lodash.orderby": "^4.6.0",
     "nuxt": "latest",
