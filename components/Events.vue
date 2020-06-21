@@ -8,7 +8,7 @@
       :key="item.order"
     >
       <div class="columns white">
-        <img class="column imgResize" :src="item.imageLink">
+        <img :src="item.imageLink" class="column imgResize">
         <div class="column ">
           <p class="title">
             {{ item.title }}
@@ -35,10 +35,11 @@
 <script>
 import orderBy from 'lodash.orderby'
 export default {
-  props: { items: {
-    type: Array,
-    required: true
-  }
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
   },
   computed: {
     sortedEvents: function () {
@@ -51,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: Apercu Pro, sans-serif;
+$sub_font: HK Grotesk Regular, sans-serif;
 .disclaimer {
   font-size: 12px;
   font-style: italic;

@@ -25,7 +25,7 @@
     "firebase": "^7.2.0",
     "jquery": "^3.4.0",
     "lodash.orderby": "^4.6.0",
-    "nuxt": "latest",
+    "nuxt": "^2.13.0",
     "nuxt-buefy": "^0.3.10",
     "popper.js": "1.14.7",
     "vue-scrollto": "^2.15.0"

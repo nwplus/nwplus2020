@@ -57,7 +57,7 @@
 @import "bulma/bulma.sass";
 
 $title_font: Merriweather;
-$sub_font: Apercu Pro, sans-serif;
+$sub_font: HK Grotesk Regular, sans-serif;
 .backgroundRiverContainer {
     position: relative;
     width: 100vw;
