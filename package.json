@@ -10,7 +10,7 @@
     "test": "jest",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "generate:prod": "cross-env DEPLOY_ENV=PRODUCTION nuxt generate",
