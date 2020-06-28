@@ -13,8 +13,7 @@ jobs:
       deploy: 
         provider: firebase
         skip_cleanup: true
-        token:
-          secure: $FIREBASE_TOKEN
+        token: $FIREBASE_TOKEN
         project: "nwhacks-2019"
         on:
           branch: dev
