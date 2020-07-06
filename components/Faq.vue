@@ -7,12 +7,12 @@
       :class="[items.indexOf(item) % 2 == 0 ? 'faqBoxLeft faq-flexbox' : 'faqBoxRight faq-flexbox']"
     >
       <button
-        class="accordion"
         @click="openSesame"
+        class="accordion"
       >
         <button
-          class="accordion"
           @click="openSesame"
+          class="accordion"
         >
           {{ item.question }}
         </button>
@@ -28,10 +28,11 @@
 
 <script>
 export default {
-  props: { items: {
-    type: Array,
-    required: true
-  }
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
   },
   methods: {
     openSesame: (e) => {

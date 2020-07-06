@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
 @import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: Apercu Pro, sans-serif;
+$sub_font: HK Grotesk Regular, sans-serif;
 .footerT {
   background-color: #33303B;
   padding: 100px 0 100px 0;

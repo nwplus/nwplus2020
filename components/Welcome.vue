@@ -6,10 +6,11 @@
 
 <script>
 export default {
-  props: { info: {
-    type: String,
-    default: 'loading..'
-  }
+  props: {
+    info: {
+      type: String,
+      default: 'loading..'
+    }
   }
 }
 </script>

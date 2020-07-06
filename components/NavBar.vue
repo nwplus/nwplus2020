@@ -79,7 +79,7 @@ export default {
 .navbar-item {
   font-size: 24px;
   color: #0DEFE1;
-  font-family: "Apercu Pro";
+  font-family: "HK Grotesk Regular";
   padding: 8px 32px;
 }
 a.navbar-item:hover,
