@@ -17,7 +17,7 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV 
     FIREBASE_PROJECT_ID: 'nwhacks-2019',
     FIREBASE_STORAGE_BUCKET: 'nwhacks-2019',
     FIREBASE_MESSAGING_SENDER_ID: '98283589440',
-    FIREBASE_CONFIG_WEB_APP_ID: '1:98283589440:web:5421c41be3ccf2235d34a5',
+    FIREBASE_APP_ID: '1:98283589440:web:5421c41be3ccf2235d34a5',
     RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
     WEBSITE_NAME: 'NwPlus_2020',
     mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
