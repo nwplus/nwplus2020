@@ -8,7 +8,7 @@
       :key="item.order"
     >
       <div class="columns white">
-        <img :src="item.imageLink" class="column imgResize">
+        <img class="column imgResize" :src="item.imageLink">
         <div class="column ">
           <p class="title">
             {{ item.title }}
@@ -23,7 +23,7 @@
             We use * to specifically and intentionally include cis and trans women,
             as well as non-binary, agender, intersex people.
           </p>
-          <a :href="item.learnMoreLink || item.eventLink" target="_blank" class="learnMoreButton">
+          <a :href="item.learnMoreLink" target="_blank" class="learnMoreButton">
             <img class="learnMoreImage" src="../assets/sprite/svg/LearnMoreButton.svg" alt="">
           </a>
         </div>
@@ -35,11 +35,10 @@
 <script>
 import orderBy from 'lodash.orderby'
 export default {
-  props: {
-    items: {
-      type: Array,
-      required: true
-    }
+  props: { items: {
+    type: Array,
+    required: true
+  }
   },
   computed: {
     sortedEvents: function () {
@@ -52,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: HK Grotesk Regular, sans-serif;
+$sub_font: Apercu Pro, sans-serif;
 .disclaimer {
   font-size: 12px;
   font-style: italic;

@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: HK Grotesk Regular, sans-serif;
+$sub_font: Apercu Pro, sans-serif;
 .outro {
   align-items: center;
   color: #21258a;
