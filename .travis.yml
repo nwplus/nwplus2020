@@ -1,19 +1,25 @@
 language: node_js
-node_js: node
+node_js:
+  - 10.15.3
 notifications:
   email: false
 install:
   - yarn install
-  - cd functions/; npm install; cd ../;
 jobs:
   include:
     - stage: "Lint, Test and Build"
-      name: 'Functions'
-      script: cd functions/; npm run build && npm run lint
     - script: yarn lint && yarn test && yarn generate
-      name: 'Web'
+    - stage: "Staging"
+    - script: yarn generate:prod
+      deploy: 
+        provider: firebase
+        skip_cleanup: true
+        token: $FIREBASE_TOKEN
+        project: "nwhacks-2019"
+        on:
+          branch: dev
     - stage: Deploy
-      script: yarn generate:prod
+      script: yarn generate:prod && echo "www.nwplus.io" >> dist/CNAME
       deploy:
         provider: pages
         skip_cleanup: true
@@ -24,5 +30,7 @@ jobs:
           branch: master
 stages:
   - "Lint, Test and Build"
+  - name: Staging
+    if: branch = dev
   - name: Deploy
     if: branch = master

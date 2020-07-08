@@ -1,1 +1,0 @@
-Make sure to run `firebase functions:config:get > .runtimeconfig.json` to have the mailchimp API key

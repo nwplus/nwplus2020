@@ -97,12 +97,12 @@ export default {
 //   src: url("../assets/fonts/HKConcentrate-Bold.woff") format("woff");
 // }
 @font-face {
-  font-family: "Apercu Pro";
-  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+  font-family: "HK Grotesk Regular";
+  src: url("../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
 }
 
 $title_font: Merriweather;
-$sub_font: Apercu Pro, sans-serif;
+$sub_font: HK Grotesk Regular, sans-serif;
 
 html body {
   width: 100vw;
