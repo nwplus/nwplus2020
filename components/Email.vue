@@ -30,39 +30,35 @@ export default {
     async submit() {
       try {
         await this.$axios.post(process.env.mailingListUrl, {
-          email_address: this.email
+          email: this.email
         })
         this.email = ''
-        this.$toast.open({
-          duration: 5000,
-          message: 'Successfully added you to our mailing list!',
-          type: 'is-success',
-          position: 'is-bottom'
+        this.$toast.success('Successfully added you to our mailing list!', {
+          duration: 2500,
+          type: 'success',
+          position: 'bottom-center'
         })
       } catch (e) {
         const reply = e.response
-        if (reply.status === 500) {
-          this.$toast.open({
-            duration: 5000,
-            message: 'Something went wrong with our sever.. please try again later',
-            position: 'is-bottom',
-            type: 'is-danger'
+        if (reply.status === 409) {
+          this.$toast.error('You are already subscribed!', {
+            duration: 2500,
+            position: 'bottom-center',
+            type: 'error'
           })
         }
         if (reply.status === 502) {
-          this.$toast.open({
-            duration: 5000,
-            message: `An error occured: ${reply.data.errors}`,
-            position: 'is-bottom',
-            type: 'is-danger'
+          this.$toast.error(`An error occured: ${reply.data.errors}`, {
+            duration: 2500,
+            position: 'bottom-center',
+            type: 'error'
           })
         }
-        if (reply.status === 400) {
-          this.$toast.open({
-            duration: 5000,
-            message: 'Please fill out all fields!',
-            position: 'is-bottom',
-            type: 'is-danger'
+        if (reply.status === 400 || reply.status === 500) {
+          this.$toast.error(reply.data, {
+            duration: 2500,
+            position: 'bottom-center',
+            type: 'error'
           })
         }
       }
@@ -88,11 +84,8 @@ $sub_font: HK Grotesk Regular, sans-serif;
 
 .emailInput {
   position: relative;
-  z-index: 0;
   box-sizing: border-box;
-  border-radius: 4px;
-  // width: 313px;
-  padding-right: 0px !important;
+  border-radius: 4px 0px 0px 4px !important;
 }
 
 #subscribeText {
@@ -123,13 +116,13 @@ $sub_font: HK Grotesk Regular, sans-serif;
 }
 
 .subBtn {
-  position: absolute;
+  position: relative;
   background: linear-gradient(180deg, #4DE8C2 0%, #18CDCD 100%, #19CBCB 100%);
   text-align: center;
   color: white;
   font-size: 17px;
   line-height: 21px;
   font-family: $sub_font;
-  transform: translate(-20px);
+  border-radius: 0px 4px 4px 0px;
 }
 </style>

@@ -20,11 +20,11 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV 
     FIREBASE_APP_ID: '1:98283589440:web:5421c41be3ccf2235d34a5',
     RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
     WEBSITE_NAME: 'NwPlus_2020',
-    mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
+    mailingListUrl: 'https://us-central1-nwplus-ubc-dev.cloudfunctions.net/addToMailingList'
   }
 } : {
   env: {
-    mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+    mailingListUrl: 'https://us-central1-nwplus-ubc-dev.cloudfunctions.net/addToMailingList'
   }
 }
 
@@ -70,6 +70,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/svg-sprite',
     'nuxt-buefy',
+    '@nuxtjs/toast',
     [
       'nuxt-buefy',
       {
