@@ -3,8 +3,8 @@
     <p>
       nwPlus is always looking for new ventures, opportunities, and connections. If you are interested in working with us, joining us or speaking at one of our events, feel free to reach out to us at
       <a
-        href="mailto:hello@nwplus.io"
-      >hello@nwplus.io</a>.
+        href="mailto:info@nwplus.io"
+      >info@nwplus.io</a>.
     </p>
   </div>
 </template>
