@@ -1,4 +1,4 @@
-# Contributing to [Project Name]
+# Contributing to nwplus2020
 Year 2020 version of UBC nwPlus student club's homepage. It contains bried introduction of the club, the
 list of events the club holds every year, and provides newletter subscription and social media for interested 
 site visitors to stay in touch with the club. The current homepage of the club has been redesigned and will reside in the [www](https://github.com/nwplus/www) repo of the organization.
