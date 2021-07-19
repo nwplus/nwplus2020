@@ -9,6 +9,6 @@
 ## Other considerations
 <!--- Workarounds, planned future changes, special notes, etc. -->
 
-## :flashlight: Testing Instructions
+## Testing Instructions
 
 <!-- Explain how to test your changes, if applicable. -->
